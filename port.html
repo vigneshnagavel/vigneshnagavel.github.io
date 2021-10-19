@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Ubuntu",sans-serif;
+        }
+        .nav-link{
+            text-decoration: none;
+            float: right;
+            padding: 2em;
+            color: black;
+            
+        }
+        #navbar{
+            position: fixed;
+            width: 100%;
+        }
+        #welcomediv{
+            display: flex;
+            height: 100vh;
+            width: 100%;
+            align-items: center;
+            
+        }
+        #my1{
+            width: 50%;
+        }
+        #my2{
+            width: 50%;
+        }
+        #sq1{
+            position: absolute;
+            top: 22em;
+            left: 6em;
+            animation: rotation 3s infinite;
+            
+        }
+        #sq2{
+            position: absolute;
+            top: 7em;
+            left: 24em;
+            animation: rotation 3s infinite;
+        }
+        #me{
+            position: absolute;
+            width: 50vmin ;
+            top: 10em;
+            left: 10em;
+            border-radius: 30px;
+        }
+        #iam{
+            font-size: 3em;
+        }
+        #myname{
+            font-size: 4em;
+            position: absolute;
+            color: rgb(9, 39, 73);
+            
+        }
+        #sq3{
+            position: absolute;
+            right: 6em;
+            animation: rotation 3s infinite;
+        }
+        @keyframes rotation {
+            from{
+                transform: rotate(0deg);
+            }
+            to{
+                transform: rotate(361deg);
+            }
+        }
+        #occ{
+            display: flex;
+
+        }
+        @media only screen and (max-width:600px) {
+            #welcomediv{
+                flex-direction: column;
+            }
+            #my1{
+                position: relative;
+                width: 100vmin;
+                height: 50vmax;
+            }
+            #my2{
+                position: relative;
+                width: 100vmin;
+                height: 30vmax;
+                padding: 6em;
+            }
+            #me{
+                width:40vmin;
+            }
+            #sq1{
+                top: 17em;
+                width: 9em;
+            }
+            #sq2{
+                left: 20em;
+            }
+            #iam{
+                font-size: 1em;
+                
+                
+            }
+            #myname{
+                font-size: 2em;
+                
+            }
+            #sq3{
+                width:7em;
+                top: 4em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id = "navbar">
+        <a class = "nav-link" href="#welcome-section">About</a>
+        <a class = "nav-link" href="#projects">Projects</a>
+        <a class = "nav-link" href="#contact">Contact</a>
+    </div>
+    <div id = my>
+        <section id = "welcome-section">
+            <div id = "welcomediv">
+                <div id = "my1">
+                    <img id = "sq1" src="https://raw.githubusercontent.com/vigneshnagavel/srcphotos/main/Rectangle%2021.png" alt="sq">
+                    <img id = "sq2" src="https://raw.githubusercontent.com/vigneshnagavel/srcphotos/main/Rectangle%2032.png" alt="sq">
+                    <img id = "me" src="https://raw.githubusercontent.com/vigneshnagavel/srcphotos/main/WhatsApp%20Image%202021-05-20%20at%206.53.20%20PM.jpeg" alt="VigneshNagavel">
+                </div>
+                <div id = "my2">
+                    <img id = "sq3" src="https://raw.githubusercontent.com/vigneshnagavel/srcphotos/main/Rectangle%2043.png" alt="sq">
+                    <h1 id = "iam">I Am!</h1>
+                    <h1 id = "myname">Vignesh Nagavel</h1>
+                </div>
+            </div>
+            <div id = "occ">
+                <div><p>Electronics and Communication Engineer</p></div>
+                
+                <div><p>Devoloper</p></div>
+                <div><p>Graphic Designer</p></div>
+            </div>
+        </section>
+    </div>
+    <div id = "projectsdiv">
+        <section id = "projects">
+            <div>
+                <img src="" alt="">
+                <h5></h5>
+            </div>
+            <div>
+                <img src="" alt="">
+                <h5></h5>
+            </div>
+            <div>
+                <img src="" alt="">
+                <h5></h5>
+            </div>
+        </section>
+    </div>
+    <div id = contactdiv>
+        <section id = "contact"></section>
+    </div>
+</body>
+</html>
