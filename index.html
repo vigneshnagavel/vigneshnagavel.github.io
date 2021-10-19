@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: "Ubuntu", sans-serif;
+        
+      }
+      body{
+        background-image: radial-gradient(white,rgb(204, 241, 255),rgb(126, 186, 255));
+      }
+      #navbar {
+        position: fixed;
+        width: 100%;
+      }
+      .nav-link {
+        text-decoration: none;
+        color: black;
+        padding: 1em;
+        float: right;
+      }
+      #welcomediv {
+        display: flex;
+        flex-wrap: nowrap;
+        width: 100%;
+        height: 100vh;
+      }
+      #my1 {
+        width: 50vw;
+        height: 50vh;
+        position: relative;
+      }
+      #my2 {
+        width: 50vw;
+        height: 30vh;
+        margin-top: 15em;
+        margin-left: 5em;
+      }
+      #sq1 {
+        position: absolute;
+        margin-left: 13vmin;
+        margin-top: 55vmin;
+        animation: rotation 3s infinite;
+      }
+      #sq2 {
+        position: absolute;
+        margin-left: 65vmin;
+        margin-top: 17vmin;
+        animation: rotation 3s infinite;
+      }
+      #me {
+        position: absolute;
+        width: 50vmin;
+        margin: 25vmin;
+        border-radius: 60px;
+      }
+      #sq3 {
+        position: absolute;
+        margin-left: 18em;
+        width: 30vmin;
+        animation: rotation 3s infinite;
+      }
+      #iam {
+        margin-left: 2em;
+      }
+      #myname {
+        position: absolute;
+        margin-left: 1em;
+        font-size: 3em;
+        color: rgb(8, 23, 70);
+      }
+      #occ {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow: hidden;
+        animation: run ease 5s infinite;
+  -webkit-animation: run ease 5s infinite;
+  -moz-animation: run ease 3s;
+  -o-animation: run ease 3s;
+  -ms-animation: run ease 3s;
+      }
+      #occ > div > p {
+        width: 100vw;
+        text-align: center;
+        font-size: 1.5em;
+        font-weight: 500;
+        
+      }
+        
+
+@keyframes run {
+    0% { margin-left: -196%;}
+
+50%{ margin-left: -98%;}
+100%{margin-left: 0%;}
+}
+
+@-moz-keyframes run {
+    0% { margin-left: -198%;}
+
+50%{ margin-left: -98%;}
+100%{margin-left: 0%;}
+}
+
+@-webkit-keyframes run {
+  0% { margin-left: -198%;}
+
+  50%{ margin-left: -98%;}
+  100%{margin-left: 0%;}
+}
+
+@-o-keyframes run {
+  0% { margin-left: -98%;}
+  100%{ margin-left: 0%;}
+}
+
+@-ms-keyframes run {
+  0% { margin-left: -98%;}
+  100%{ margin-left: 0%;}
+}
+
+
+      @media only screen and (max-width: 600px) {
+        #welcomediv {
+          flex-wrap: wrap;
+          flex-direction: column;
+        }
+        #my1 {
+          height: 70vmax;
+        }
+        #my2 {
+          width: 50vmax;
+          margin: 0;
+        }
+        #sq1 {
+          width: 30vmin;
+        }
+        #sq2 {
+          width: 20vmin;
+        }
+        #me {
+          border-radius: 50px;
+        }
+        #sq3 {
+          width: 30vmin;
+          margin-left: 13em;
+        }
+        #myname {
+          font-size: 2em;
+          margin-left: 1.5em;
+        }
+        #iam {
+          margin-left: 2em;
+        }
+        #occ > div > p {
+          text-align: center;
+        }
+      }
+      @keyframes rotation {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(361deg);
+        }
+      }
+      #projects{
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-evenly;
+          margin-top: 10vh;
+          margin-bottom: 10vh;
+      }
+      #projects>div>a>img{
+            width:25vmax;
+            border-radius: 10px;
+            padding: 1em;
+      }
+      #projects>div>a>h5{
+          text-align: center;
+            text-decoration: none;
+          font-size: 1em;
+          padding: 1em;
+          background-image: linear-gradient(45deg,rgb(91, 247, 99),rgb(248, 237, 81));
+      }
+      #projects>div>a{
+        text-decoration: none;
+      }
+      #projectsdiv>h1{
+          text-align: center;
+          margin: 10vh;
+      }
+      #projects>div{
+          border-style: solid;
+          border-radius: 10px;
+          border-color: chartreuse;
+      }
+      #contact{
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+      }
+      #contact>div>img{
+        width: 10vmax;
+        margin: 3em;
+      }
+      #contact>div>a{
+        text-decoration: none;
+        font-size: 1em;
+        
+      }
+      #contact>div{
+        height: 19vmax;
+        margin: 2em;
+        background-image: linear-gradient(45deg,rgb(252, 89, 198),rgb(252, 171, 50));
+        border-radius: 30px;
+      }
+      #contactdiv{
+        font-size: 1em;
+        text-align: center;
+      }
+      #linkedin{
+        padding-top:  3em;
+        padding-bottom: 1.5em;
+      }
+      @media only screen and (max-width:600px) {
+        #projects>div>a>img{
+          width: 80vmin;
+        }
+        #projects>div{
+          margin-bottom: 2em;
+        }
+        #linkedin{
+          padding-top: 1em;
+        }
+        #contact>div>a{
+          font-size: 0.65em;
+        }
+        #contact>div{
+          height: 30vmax;
+        }
+        
+      }
+    </style>
+  </head>
+  <body>
+    <div id="navbar">
+      <a class="nav-link" href="#welcome-section">About</a>
+      <a class="nav-link" href="#projects">Projects</a>
+      <a class="nav-link" href="#contact">Contact</a>
+    </div>
+    <div id="my">
+      <section id="welcome-section">
+        <div id="welcomediv">
+          <div id="my1">
+            <img 
+              id="sq1"
+              src="https://raw.githubusercontent.com/vigneshnagavel/srcphotos/main/Rectangle%2021.png"
+              alt="sq"
+            />
+            <img
+              id="sq2"
+              src="https://raw.githubusercontent.com/vigneshnagavel/srcphotos/main/Rectangle%2032.png"
+              alt="sq"
+            />
+            <img
+              id="me"
+              src="https://raw.githubusercontent.com/vigneshnagavel/srcphotos/main/WhatsApp%20Image%202021-05-20%20at%206.53.20%20PM.jpeg"
+              alt="VigneshNagavel"
+            />
+          </div>
+          <div id="my2">
+            <img
+              id="sq3"
+              src="https://raw.githubusercontent.com/vigneshnagavel/srcphotos/main/Rectangle%2043.png"
+              alt="sq"
+            />
+            <h1 id="iam">I Am!</h1>
+            <h1 id="myname">Vignesh Nagavel</h1>
+          </div>
+        </div>
+        <div id="occ">
+          <div><p>Electronics and Communication Engineer</p></div>
+
+          <div><p>Devoloper</p></div>
+          <div><p>Graphic Designer</p></div>
+        </div>
+      </section>
+    </div>
+    <div id="projectsdiv">
+        <h1>Projects</h1>
+      <section id="projects">
+        <div>
+          <a href="">
+            <img  src="https://raw.githubusercontent.com/vigneshnagavel/srcphotos/main/docpage.png" alt="docpage" />
+            <h5>Documentation</h5>
+          </a>
+        </div>
+        <div>
+          <a href=""><img src="https://raw.githubusercontent.com/vigneshnagavel/srcphotos/main/landingpage.png" alt="landingpage" />
+            <h5>Landing Page</h5></a>
+        </div>
+        <div>
+          <a href=""><img src="https://raw.githubusercontent.com/vigneshnagavel/srcphotos/main/survaeypage.png" alt="surveypage" />
+            <h5>Survey Form</h5></a>
+        </div>
+      </section>
+    </div>
+    <div id="contactdiv">
+      <h1>Contact me!</h1>
+      <section id="contact">
+          <div>
+              <img id="github" src="https://raw.githubusercontent.com/vigneshnagavel/srcphotos/main/Octocat.png" alt="github">
+              <a href="https://github.com/vigneshnagavel" target ="_blank" ><h1>@vigneshnagavel</h1></a>
+          </div>
+          <div>
+              <img id = "linkedin" src="https://raw.githubusercontent.com/vigneshnagavel/srcphotos/main/linkedin-logo-png-1840.png" alt="linkedin">
+              <a href="https://www.linkedin.com/in/vigneshnagavel/" target = "_blank"><h1>@vigneshnagavel</h1></a>
+          </div>
+      </section>
+    </div>
+  </body>
+</html>
