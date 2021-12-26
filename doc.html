@@ -1,0 +1,678 @@
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      
+      body {
+        display: flex;
+        font-family: "Ubuntu", sans-serif;
+      }
+      #div1 {
+        width: 25%;
+      }
+      #div2 {
+        width: 75%;
+      }
+      .nav-link {
+        text-decoration: none;
+        color: blue;
+      }
+      #navbar > ul {
+        list-style-type: none;
+        background-image: linear-gradient(
+          45deg,
+          rgb(93, 252, 127),
+          rgb(248, 196, 82)
+        );
+        margin: 1em;
+        padding: 1em 0;
+        border-radius: 1em;
+      }
+      #navbar > ul > li {
+        padding: 0.5em;
+        margin: 0 1em;
+      }
+      #navbar > ul > li:hover {
+        background-image: linear-gradient(
+          35deg,
+          rgb(75, 245, 140),
+          rgb(183, 249, 253)
+        );
+        border-radius: 1em;
+      }
+      .main-section > header {
+        font-size: 1.5em;
+        font-weight: 500;
+        line-height: 5em;
+        background-image: linear-gradient(
+          45deg,
+          rgb(11, 44, 87),
+          rgb(255, 149, 149)
+        );
+        text-align: center;
+        border-radius: 1em;
+        color: aliceblue;
+      }
+      #navbar {
+        line-height: 2em;
+        position: fixed;
+        height: 100%;
+        overflow: scroll;
+        width: 25%;
+      }
+      #main-doc {
+        position: absolute;
+        padding: 0 3em;
+      }
+      .main-section > article {
+        line-height: 2em;
+        padding-top:2em;
+      }
+      #navbar> header {
+        text-align: center;
+        padding: 1em;
+        margin: 1em;
+        background-image: linear-gradient(
+          45deg,
+          rgb(131, 64, 240),
+          rgb(139, 156, 255)
+        );
+        border-radius: 1em;
+      }
+      .main-section {
+        background-image: linear-gradient(
+          45deg,
+          rgb(152, 228, 252),
+          rgb(56, 159, 255)
+        );
+        margin: 2em;
+        padding: 3em;
+        border-radius: 1em;
+      }
+      #button{
+      display:none;
+      }
+      @media only screen and (max-width: 600px) {
+    body {
+      flex-direction:column;
+      
+    }
+    #div1{
+    height:50%;
+  }
+  #div2{
+  height:50%;}
+  #navbar{
+  height:50%;
+  width:100%;
+  top:0;
+  position:absolute;
+  }
+  #main-doc{
+  top:50%;
+  overflow:scroll;}
+  #button{
+    display:block;
+  text-decoration:none;
+  bottom:5%;
+  right:5%;
+  position:fixed;
+  color:white;
+  background-image: linear-gradient(45deg,rgb(113, 7, 122),blue);
+  padding: 1em;
+  border-radius: 0.5em;
+  }}
+      
+      
+  </style>
+  </head>
+  
+  <body>
+    <div id="div1">
+      <nav id="navbar">
+        
+          <header><h1>Python Doc</h1></header>
+        <section id = "menu">
+        </section>
+        <ul>
+          <li><a href="#Python_Intro" class="nav-link">Python Intro</a></li>
+          <li>
+            <a href="#Python_Get_Started" class="nav-link"
+              >Python Get Started</a
+            >
+          </li>
+          <li><a href="#Python_Syntax" class="nav-link">Python Syntax</a></li>
+          <li>
+            <a href="#Python_Comments" class="nav-link">Python Comments</a>
+          </li>
+          <li>
+            <a href="#Python_Variables" class="nav-link">Python Variables</a>
+          </li>
+          <li>
+            <a href="#Python_Data_Types" class="nav-link">Python Data Types</a>
+          </li>
+          <li><a href="#Python_Numbers" class="nav-link">Python Numbers</a></li>
+          <li><a href="#Python_Casting" class="nav-link">Python Casting</a></li>
+          <li><a href="#Python_Strings" class="nav-link">Python Strings</a></li>
+          <li>
+            <a href="#Python_Booleans" class="nav-link">Python Booleans</a>
+          </li>
+          <li>
+            <a href="#Python_Operators" class="nav-link">Python Operators</a>
+          </li>
+          <li><a href="#Python_Lists" class="nav-link">Python Lists</a></li>
+
+          <li><a href="#Python_Sets" class="nav-link">Python Sets</a></li>
+          <li>
+            <a href="#Python_Dictionaries" class="nav-link"
+              >Python Dictionaries</a
+            >
+          </li>
+          <li>
+            <a href="#Python_While_Loops" class="nav-link"
+              >Python While Loops</a
+            >
+          </li>
+          <li>
+            <a href="#Python_For_Loops" class="nav-link">Python For Loops</a>
+          </li>
+          <li>
+            <a href="#Python_Funtions" class="nav-link">Python Funtions</a>
+          </li>
+          <li><a href="#Python_Lambda" class="nav-link">Python Lambda</a></li>
+          <li><a href="#Python_Arrays" class="nav-link">Python Arrays</a></li>
+          <li><a href="#Python_Classes" class="nav-link">Python Classes</a></li>
+          <li>
+            <a href="#Python_Inheritance" class="nav-link"
+              >Python Inheritance</a
+            >
+          </li>
+          <li>
+            <a href="#Python_Iterators" class="nav-link">Python Iterators</a>
+          </li>
+          <li><a href="#Python_Scopes" class="nav-link">Python Scopes</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div id="div2">
+      <main id="main-doc">
+        <section id="Python_Intro" class="main-section">
+          <header>Python Intro</header>
+          <article>
+            <h2>What is Python?</h2>
+            <p>
+              Python is a popular programming language. It was created by Guido
+              van Rossum, and released in 1991.
+            </p>
+
+            <p>It is used for:</p>
+
+            <ul>
+              <li>web development (server-side),</li>
+              <li>software development,</li>
+              <li>mathematics,</li>
+              <li>system scripting.</li>
+            </ul>
+
+            <h3>What can Python do?</h3>
+            <ul>
+              <li>
+                Python can be used on a server to create web applications.
+              </li>
+              <li>
+                Python can be used alongside software to create workflows.
+              </li>
+              <li>
+                Python can connect to database systems. It can also read and
+                modify files.
+              </li>
+              <li>
+                Python can be used to handle big data and perform complex
+                mathematics.
+              </li>
+              <li>
+                Python can be used for rapid prototyping, or for
+                production-ready software development.
+              </li>
+            </ul>
+
+            <h3>Why Python?</h3>
+            <ul>
+              <li>
+                Python works on different platforms (Windows, Mac, Linux,
+                Raspberry Pi, etc).
+              </li>
+              <li>
+                Python has a simple syntax similar to the English language.
+              </li>
+              <li>
+                Python has syntax that allows developers to write programs with
+                fewer lines than some other programming languages.
+              </li>
+              <li>
+                Python runs on an interpreter system, meaning that code can be
+                executed as soon as it is written. This means that prototyping
+                can be very quick.
+              </li>
+              <li>
+                Python can be treated in a procedural way, an object-oriented
+                way or a functional way.
+              </li>
+            </ul>
+
+            <h3>Good to know</h3>
+            <ul>
+              <li>
+                The most recent major version of Python is Python 3, which we
+                shall be using in this tutorial. However, Python 2, although not
+                being updated with anything other than security updates, is
+                still quite popular.
+              </li>
+              <li>
+                In this tutorial Python will be written in a text editor. It is
+                possible to write Python in an Integrated Development
+                Environment, such as Thonny, Pycharm, Netbeans or Eclipse which
+                are particularly useful when managing larger collections of
+                Python files.
+              </li>
+            </ul>
+
+            <h3>Python Syntax compared to other programming languages</h3>
+            <ul>
+              <li>
+                Python was designed for readability, and has some similarities
+                to the English language with influence from mathematics.
+              </li>
+              <li>
+                Python uses new lines to complete a command, as opposed to other
+                programming languages which often use semicolons or parentheses.
+              </li>
+              <li>
+                Python relies on indentation, using whitespace, to define scope;
+                such as the scope of loops, functions and classes. Other
+                programming languages often use curly-brackets for this purpose.
+              </li>
+            </ul>
+          </article>
+        </section>
+        <section id="Python_Get_Started" class="main-section">
+          <header>Python Get Started</header>
+          <article>
+            <h2>Python Install</h2>
+
+            <p>Many PCs and Macs will have python already installed.</p>
+
+            <p>
+              To check if you have python installed on a Windows PC, search in
+              the start bar for Python or run the following on the Command Line
+              (cmd.exe):
+            </p>
+            <p>
+              If you find that you do not have python installed on your
+              computer, then you can download it for free from the following
+              website:
+              <a href="https://www.python.org/" target="_blank"
+                >https://www.python.org/</a
+              >
+            </p>
+            <hr />
+            <h2>Python Quickstart</h2>
+
+            <p>
+              Python is an interpreted programming language, this means that as
+              a developer you write Python (.py) files in a text editor and then
+              put those files into the python interpreter to be executed.
+            </p>
+
+            <p>
+              The way to run a python file is like this on the command line:
+            </p>
+          </article>
+        </section>
+        <section id="Python_Syntax" class="main-section">
+          <header>Python Syntax</header>
+          <article>
+            <h2>Execute Python Syntax</h2>
+
+            <p>
+              As we learned in the previous page, Python syntax can be executed
+              by writing directly in the Command Line:
+            </p>
+            <p>
+              &gt;&gt;&gt; print("Hello, World!")<br />
+              Hello, World!
+            </p>
+          </article>
+        </section>
+        <section id="Python_Comments" class="main-section">
+          <header>Python Comments</header>
+          <article>
+            <p>
+              Comments can be used to explain Python code. Comments can be used
+              to make the code more readable. Comments can be used to prevent
+              execution when testing code.
+            </p>
+            <p>#This is a comment <code>print("Hello, World!")</code></p>
+          </article>
+        </section>
+        <section id="Python_Variables" class="main-section">
+          <header>Python Variables</header>
+          <article>
+            <p>Variables Variables are containers for storing data values.</p>
+            <p>
+              x = 5 <br />
+              y = "John" <br />
+              print(x) <br />
+              print(y) <br />
+            </p>
+          </article>
+        </section>
+        <section id="Python_Data_Types" class="main-section">
+          <header>Python Data Types</header>
+          <article>
+            Built-in Data Types <br />
+            In programming, data type is an important concept. <br />
+
+            Variables can store data of different types, and different types can
+            do different things. <br />
+
+            Python has the following data types built-in by default, in these
+            categories: <br />
+
+            Text Type: str <br />
+            Numeric Types: int, float, complex <br />
+            Sequence Types: list, tuple, range <br />
+            Mapping Type: dict <br />
+            Set Types: set, frozenset <br />
+            Boolean Type: bool <br />
+            Binary Types: bytes, bytearray, memoryview <br />
+          </article>
+        </section>
+        <section id="Python_Numbers" class="main-section">
+          <header>Python Numbers</header>
+          <article>
+            Python Numbers -- There are three numeric types in Python: <br />
+
+            int <br />
+            float <br />
+            complex <br />
+          </article>
+        </section>
+        <section id="Python_Casting" class="main-section">
+          <header>Python Casting</header>
+          <article>
+            <p>
+              Specify a Variable Type There may be times when you want to
+              specify a type on to a variable. This can be done with casting.
+              Python is an object-orientated language, and as such it uses
+              classes to define data types, including its primitive types.
+            </p>
+            <ul>
+              <li>
+                int() - constructs an integer number from an integer literal, a
+                float literal (by removing all decimals), or a string literal
+                (providing the string represents a whole number)
+              </li>
+              <li>
+                float() - constructs a float number from an integer literal, a
+                float literal or a string literal (providing the string
+                represents a float or an integer)
+              </li>
+              <li>
+                str() - constructs a string from a wide variety of data types,
+                including strings, integer literals and float literals
+              </li>
+            </ul>
+          </article>
+        </section>
+        <section id="Python_Strings" class="main-section">
+          <header>Python Strings</header>
+          <article>
+            <p>
+              Strings -- Strings in python are surrounded by either single
+              quotation marks, or double quotation marks. <br />
+
+              'hello' is the same as "hello". <br />
+            </p>
+          </article>
+        </section>
+        <section id="Python_Booleans" class="main-section">
+          <header>Python Booleans</header>
+          <article>
+            <p>
+              Boolean Values -- In programming you often need to know if an
+              expression is True or False. <br />
+
+              You can evaluate any expression in Python, and get one of two
+              answers, True or False. <br />
+            </p>
+          </article>
+        </section>
+        <section id="Python_Operators" class="main-section">
+          <header>Python Operators</header>
+          <article>
+            <p>
+              Python Operators -- Operators are used to perform operations on
+              variables and values.
+              <br />
+            </p>
+          </article>
+        </section>
+        <section id="Python_Lists" class="main-section">
+          <header>Python Lists</header>
+          <article>
+            <p>
+              <code> >mylist = ["apple", "banana", "cherry"]</code> <br />
+              List <br />
+              Lists are used to store multiple items in a single variable.
+              <br />
+
+              Lists are one of 4 built-in data types in Python used to store
+              collections of data, the other 3 are Tuple, Set, and Dictionary,
+              all with different qualities and usage. <br />
+            </p>
+          </article>
+        </section>
+
+        <section id="Python_Sets" class="main-section">
+          <header>Python Sets</header>
+          <article>
+            <code> >myset = {"apple", "banana", "cherry"}</code> <br />
+            Set -- Sets are used to store multiple items in a single variable.
+            <br />
+
+            Set is one of 4 built-in data types in Python used to store
+            collections of data, the other 3 are List, Tuple, and Dictionary,
+            all with different qualities and usage. <br />
+
+            A set is a collection which is both unordered and unindexed. <br />
+          </article>
+        </section>
+        <section id="Python_Dictionaries" class="main-section">
+          <header>Python Dictionaries</header>
+          <article>
+            <p>
+              <code>
+                >thisdict = { <br />
+                "brand": "Ford", <br />
+                "model": "Mustang", <br />
+                "year": 1964 <br />
+                } <br />
+              </code>
+              Dictionary - - Dictionaries are used to store data values in
+              key:value pairs. <br />
+
+              A dictionary is a collection which is ordered*, changeable and
+              does not allow duplicates. <br />
+            </p>
+          </article>
+        </section>
+
+        <section id="Python_While_Loops" class="main-section">
+          <header>Python While Loops</header>
+          <article>
+            <p>
+              Python Loops -- Python has two primitive loop commands: <br />
+
+              while loops <br />
+              for loops <br />
+              The while Loop <br />
+              With the while loop we can execute a set of statements as long as
+              a condition is true. <br />
+            </p>
+          </article>
+        </section>
+        <section id="Python_For_Loops" class="main-section">
+          <header>Python For Loops</header>
+          <article>
+            <p>
+              Python For Loops -- A for loop is used for iterating over a
+              sequence (that is either a list, a tuple, a dictionary, a set, or
+              a string). <br />
+
+              This is less like the for keyword in other programming languages,
+              and works more like an iterator method as found in other
+              object-orientated programming languages. <br />
+
+              With the for loop we can execute a set of statements, once for
+              each item in a list, tuple, set etc. <br />
+            </p>
+          </article>
+        </section>
+        <section id="Python_Funtions" class="main-section">
+          <header>Python Funtions</header>
+          <article>
+            <p>
+              A function is a block of code which only runs when it is called.
+              <br />
+
+              You can pass data, known as parameters, into a function. <br />
+
+              A function can return data as a result. <br />
+
+              Creating a Function <br />
+              In Python a function is defined using the def keyword: <br />
+            </p>
+          </article>
+        </section>
+        <section id="Python_Lambda" class="main-section">
+          <header>Python Lambda</header>
+          <article>
+            <p>
+              A lambda function is a small anonymous function. <br />
+
+              A lambda function can take any number of arguments, but can only
+              have one expression. <br />
+
+              Syntax <br />
+              lambda arguments : expression <br />
+            </p>
+          </article>
+        </section>
+        <section id="Python_Arrays" class="main-section">
+          <header>Python Arrays</header>
+          <article>
+            <p>
+              What is an Array? <br />
+              An array is a special variable, which can hold more than one value
+              at a time. <br />
+
+              If you have a list of items (a list of car names, for example),
+              storing the cars in single variables could look like this: <br />
+
+              <code> >car1 = "Ford" </code> <br />
+              <code>car2 = "Volvo"</code> <br />
+              <code>car3 = "BMW"</code> <br />
+              However, what if you want to loop through the cars and find a
+              specific one? And what if you had not 3 cars, but 300? <br />
+
+              The solution is an array! <br />
+
+              An array can hold many values under a single name, and you can
+              access the values by referring to an index number. <br />
+            </p>
+          </article>
+        </section>
+        <section id="Python_Classes" class="main-section">
+          <header>Python Classes</header>
+          <article>
+            <p>
+              Python Classes/Objects <br />
+              Python is an object oriented programming language. <br />
+
+              Almost everything in Python is an object, with its properties and
+              methods. <br />
+
+              A Class is like an object constructor, or a "blueprint" for
+              creating objects. <br />
+
+              Create a Class <br />
+              To create a class, use the keyword class: <br />
+            </p>
+          </article>
+        </section>
+        <section id="Python_Inheritance" class="main-section">
+          <header>Python Inheritance</header>
+          <article>
+            <p>
+              Python Inheritance <br />
+              Inheritance allows us to define a class that inherits all the
+              methods and properties from another class. <br />
+
+              Parent class is the class being inherited from, also called base
+              class. <br />
+
+              Child class is the class that inherits from another class, also
+              called derived class. <br />
+            </p>
+          </article>
+        </section>
+        <section id="Python_Iterators" class="main-section">
+          <header>Python Iterators</header>
+          <article>
+            <p>
+              Python Iterators -- An iterator is an object that contains a
+              countable number of values. <br />
+
+              An iterator is an object that can be iterated upon, meaning that
+              you can traverse through all the values. <br />
+
+              Technically, in Python, an iterator is an object which implements
+              the iterator protocol, which consist of the methods __iter__() and
+              __next__(). <br />
+            </p>
+          </article>
+        </section>
+        <section id="Python_Scopes" class="main-section">
+          <header>Python Scopes</header>
+          <article>
+            <p>
+              A variable is only available from inside the region it is created.
+              This is called scope.
+              <br />
+
+              Local Scope
+              <br />
+              A variable created inside a function belongs to the local scope of
+              that function, and can only be used inside that function.
+              <br />
+            </p>
+          </article>
+        </section>
+       
+      </main>
+    </div>
+    <a id= "button" href = "#menu">Menu</a>
+    
+  </body>
+</html>
