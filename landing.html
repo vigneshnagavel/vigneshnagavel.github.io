@@ -1,0 +1,188 @@
+<html>
+    
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+  </head>
+  <style>
+    *{
+      padding:0;
+      margin:0;
+      box-sizing:border-box;
+      font-family: 'Rubik', sans-serif;
+    }
+    #header{
+      display:flex;
+      height:3em;
+      width:100%;
+      text-align: center;
+        align-items: center;
+        position: fixed;
+        background-color: white;
+        height: 5rem;
+        top: 0;
+        
+      
+    }
+    #header-img{
+     width:3em;
+      justify-self:center;
+      
+      
+    }
+    #imgdiv{
+      width:50%;
+      
+    }
+    #navdiv{
+        width: 50%;
+    }
+    #nav-bar{
+      
+      
+      width:50%; 
+    }
+
+    #nav-bar>a{
+     padding:0px 10px;
+      text-decoration:none;
+      color: black;
+    }
+    #home{
+        text-align: center;
+        
+    }
+    #aboutdiv{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    .poster{
+        text-align:center;
+        margin:4vmin;
+        border-style: solid;
+        border-width: 1px;
+        border-radius: 10px;
+        padding: 4vmin;
+    }
+    .poster>div>img{
+        border-radius: 10px;
+        margin-bottom: 4vmin;
+        
+    }
+    iframe{
+        border-radius: 10px;
+        margin: 1.5vmin;
+    }
+    #title{
+        margin: 2.5vmin;
+    }
+    #titlep{
+        margin: 1.5vmin;
+    }
+    #maindiv{
+      margin-top: 5rem;
+    }
+    #formdiv{
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+      border-style: solid;
+      border-width: 1px;
+      margin: 20vmin;
+      
+      
+    }
+    #formdiv>h2{
+      margin: 2vmin;
+    }
+    #form{
+      line-height: 7vmin;
+    }
+    .typebox{
+      width: 50vmin;
+      height:5vmin;
+    }
+    #submit{
+      padding: 1.5vmin;
+      margin: 1.5vmin;
+    }
+    #subdiv{
+      text-align: center;
+    }
+    @media(max-width:400px){
+      #header{
+        flex-direction: column;
+      }
+    }
+  </style>
+  <body>
+    <header id = "header">
+      <div id = "imgdiv">
+        <img src= "https://images.fastcompany.net/image/upload/w_1280,f_auto,q_auto,fl_lossy/w_596,c_limit,q_auto:best,f_auto/fc/3034007-inline-i-applelogo.jpg" alt = "" id = "header-img">
+      </div>
+      <div id = "navdiv">
+        <nav id = "nav-bar">
+            <a href = "#home" class="nav-link">Home</a>
+            <a href = "#about" class="nav-link">About</a>
+            <a href = "#contact" class="nav-link">Contact US</a>
+          </nav>
+      </div>
+    </header>
+    <div id = "maindiv">
+      <section id = "home">
+        <h1 id = "title">New Gen in Technology!</h1>
+        <p id = "titlep">You Deserve It</p>
+        <iframe id = "video" width="560" height="315" src="https://www.youtube.com/embed/72cAe_2LAFQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </section>
+      <section id = "about">
+        <div id = "aboutdiv">
+          <div class= "poster">
+              <div>
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjO7-0A-ENOdVXd3GooVyADozswhP_82Vejg&usqp=CAU" alt="">
+              </div>
+              <div>
+                  <h3>iphone 13</h3>
+              </div>
+          </div>
+          <div class= "poster">
+              <div>
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWYWdc888YEjBcGb2hCvBehfsIz4NAJRk7ug&usqp=CAU" alt="">
+              </div>
+              <div><h3>iphone 12</h3></div>
+          </div>
+          <div class= "poster">
+              <div>
+                  <img src="https://esquire-sg.s3.ap-southeast-1.amazonaws.com/wp-content/uploads/2019/10/30164258/Apple-Airpods-Pro-Review-Main-Image-360x180.jpg" alt="">
+              </div>
+              <div><h3>Air Pod</h3></div>
+          </div>
+        </div>
+      </section>
+      <section id = "contact">
+        <div id = "formdiv">
+          <h2>Give Your Detials we get intouch with you soon!</h2>
+          <form id = "form" action = " https://www.freecodecamp.com/email-submit">
+            <label id = "name-label" >Name</label>
+            <br>
+            <input class="typebox" type = "name" placeholder = "Enter Your Name" id = "name" name = "name">
+            <br>
+            <label id = "email-label">Email</label>
+            <br>
+            <input class="typebox" type = "email" placeholder = "Enter Your Email" id = "email" name = "email">
+            <br>
+            <div id = "subdiv">
+              <input type = "submit" id = "submit">
+            </div>
+          </form>
+        </div>
+      </section>
+    
+    </div>
+  </body>
+</html>
