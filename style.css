@@ -1,102 +1,287 @@
 *{
-    box-sizing: border-box;
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+  font-family: "Ubuntu",sans-serif;
 }
 body{
-    margin: 0px;
-    padding: 0px;
-    font: poppins;
+  width: 100vw;
+  background-image: radial-gradient(rgb(255, 255, 255),rgb(114, 163, 253));
 }
-#main{
-    width: 100%;
-    height: 50px;
-    position: relative;
+#navbar{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:flex-end;
+  width: 100vw;
+  position: fixed;
 }
-nav{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: white;
-    box-shadow: 5px 10px 30px rgba(0, 0, 0, 0.2);
+#navbar>div{
+  padding: 3vmin ;
 }
-.logo img{
-    height: 45px;
+#navbar>div>a{
+  text-decoration: none;
+  color: rgb(6, 30, 75);
+  text-shadow:  0px 0px 20px rgb(172, 172, 172);
 }
-.menu{
-    list-style: none;
-    display: flex;
+#welcomediv{
+  display: flex;
+  height: 100vh;
+  flex-wrap: wrap;
 }
-.menu li a{
-    
-    margin: 0px;
-    padding: 0px 20px;
-    display: flex;
-    font-size: 0.8em;
-    text-transform: uppercase;
-    font-weight: 500;
-    letter-spacing: 1px;
-    color: grey;
-    padding: 10px;
-    padding-left: 20px;
+#my1{
+  width: 50%;
+  display: flex;
+  height: 100vh;
+  
 }
-a{
-    text-decoration: none;
+#my2{
+  width: 50%;
+  display: flex;
+  height: 100vh;
+  
 }
-.hey{
-    color: #39bfbd;
-    font-weight: 500;
-    font-size: 0.9em;
-    border-bottom: 2px solid #39bfbd;
-    text-decoration: none;
+#sq1{
+  position: absolute;
+  width: 13vw;
+  margin-top: 5vw;
+  margin-left: 32vw;
+  animation: rotation 3s infinite;
+}
+#sq2{
+  position: absolute;
+  width: 13vw;
+  margin-top: 32vw;
+  margin-left: 3vw;
+  animation: rotation 3s infinite;
+}
+#me{
+  position: absolute;
+  width: 28vw;
+  margin: 11vw;
+  border-radius: 50px;
+  box-shadow: 0px 0px 50px rgb(173, 173, 173);
+}
+#sq3{
+  position: absolute;
+  width: 13vw;
+  margin-left: 30vw;
+  margin-top: 18vw;
+  animation: rotation 3s infinite;
+}
+#gm{
+  position: absolute;
+  width: 28vw;
+  margin: 18vw;
+  margin-left: 15vw;
+}
+#gm>h1{
+  font-size: 3vw;
+  color: rgb(5, 16, 65);
+  text-shadow:  0px 0px 15px rgb(158, 158, 158);
+  
+}
+#occ{
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  animation: run ease-in-out 5s infinite;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+
+}
+#occ>div>p{
+  width: 100vw;
+  text-align: center;
+  font-weight: 500;
+  font-size: 2vw;
+}
+@keyframes rotation {
+from {
+transform: rotate(0deg);
+}
+to {
+transform: rotate(361deg);
+}
+}
+@keyframes run {
+  0%{margin-left: -200vw;}
+  50%{margin-left: -100;}
+  100%{margin-left: 0vw;}
+  
 }
 
-.content{
-    float: left;
-    padding: 50px;
-    padding-top: 200px;
+
+#contactdiv>h1{
+  text-align: center;
+  margin-top: 7vw;
 }
-.image img{
-    width: 500px;
-    
-    
+#contact{
+  display: flex;
+  margin-top: 7vw;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-bottom: 7vw;
 }
-.main-text{
-    
-    padding: 50px;
-    padding-top: 250px;
-    padding-left: 700px;
+#contact>div>img{
+  width: 20vw;
+  
 }
-.head{
-    float: left;
-    padding: 0px;
+#contact>div{
+  padding: 2vw;
+  border-style: solid;
+  border-radius: 20px;
+  background-image: linear-gradient(45deg,rgb(9, 70, 30),rgb(90, 250, 103));
+  box-shadow: 0px 0px 50px rgb(167, 167, 167);
+}
+#linkedin{
+  margin-top: 6vw;
+  margin-bottom: 5vw;
+}
+#contact>div>a{
+  text-align: center;
+  text-decoration: none;
+  color: rgb(1, 37, 2);
+}
+.project{
+  display: flex;
+}
+.webdevdiv{
+  margin-top: 10vh;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.webdevimg{
+  width: 35vw;
+}
+.webdevh1{
+  width: 50vw;
+  font-size: 2.5rem;
+  margin-bottom: 3vh;
+  padding-left: 15vh;
+}
+.webdeva{
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: rgb(6, 24, 85);
+  padding: 10px ;
+  margin: 15vh;
+}
+.webdeva:hover{
+  color: white;
+  background-color: rgb(4, 56, 199);
+  border-radius: 5px;
+}
+.uih1{
+  padding-left: 15vw;
+}
+.uia{
+  margin-left: 15vw;
+}
+.projecth1{
+  font-size: 3rem;
+  text-align: center;
+}
+@media only screen and (max-width:600px) {
+  #welcomediv{
+      height: 85vh;
+  }
+  #my1{
+      width: 100%;
+      height: 50vh;
+  }
+  #my2{
+      width: 100%;
+      height: 50vh;
+  }
+  #me{
+      width: 50vw;
+      margin: 25vw;
+      border-radius: 35px;
+  }
+  #sq1{
+      width: 25vw;
+      margin-left: 59vw;
+      margin-top: 15vw;
+  }
+  #sq2{
+      width: 20vw;
+      margin-top: 60vw;
+      margin-left: 17vw;
+  }
+  #gm{
+      width: 50vw;
+      margin: 25vw;
+  }
+  #gm>h1{
+      font-size: 6vw;
+  }
+  #sq3{
+      width: 27vw;
+      margin-top: 25vw;
+      margin-left: 55vw;
+  }
+  #occ>div>p{
+      font-size: 5vw;
+  }
+  #projects>div>a>img{
+  width: 80vw;
+  border-radius: 10px;
+}
+  #projects>div{
+      margin: 4vw 0;
+  }
+  #contact>div>img{
+  width: 60vw;
+  
+}
+  #contact>div{
+      margin: 4vw 0;
+  }
+  .projecth1{
+    font-size: 1.5rem;
+  }
+  .webdevdiv{
+    flex-wrap: wrap;
+  }
+  .webdevh1{
+    font-size: 2rem;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    text-align: center;    
+    
+  }
+  .webdeva{
+    font-size: 1.25rem;
+    padding: 3vw;
+    
+    margin: 0;
+    
+    text-align: center;
+    
+  }
+  .uidiv{
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
+  }
+  .webdevimg{
+    width: 80vw;
+  }
+  .adiv{
+    width: 100vw;
+    padding: 5vh 0;
+    text-align: center;
+  }
+  .uia{
+    padding: 3vw;
+    margin: 0;
+    text-align: center;
+    font-size: 1.25rem;
+    display: block;
+  }
+  .uih1{
     margin: 0%;
-    color: #1c3548;
-    font-size: 3.5em;
-}
-.para{
-    float: left;
-}
-.resume-btn{
-    float: left;
-    background-color: #39bfbd;
-    padding: 5px;
-    color: white;
-    border-radius: 15px;
-    padding-left: 20px;
-    padding-right: 20px;
-    box-shadow: 5px 10px 30px rgba(24, 139, 139, 0.2);
-}
-.resume-btn:hover{
-    background-color: #23cdaf;
-    transition: all ease 0.2s;
-}
-.menu li a:hover{
-    background-color: #23cdaf;
-    color: white;
-    box-shadow: 5px 10px 30px rgba(24, 139, 119, 0.2);
-    transition: all ease 0.2s;
-    
+  }
 }

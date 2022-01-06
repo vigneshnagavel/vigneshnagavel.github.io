@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0%;
+            margin: 0%;
+            box-sizing: border-box;
+            font-family: "Ubuntu",sans-serif;
+        }
+        body{
+            width: 100vw;
+            background-image: radial-gradient(rgb(255, 255, 255),rgb(114, 163, 253));
+        }
+        #navbar{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content:flex-end;
+            width: 100vw;
+            position: fixed;
+        }
+        #navbar>div{
+            padding: 3vmin ;
+        }
+        #navbar>div>a{
+            text-decoration: none;
+            color: rgb(6, 30, 75);
+            text-shadow:  0px 0px 20px rgb(172, 172, 172);
+        }
+        #welcomediv{
+            display: flex;
+            height: 100vh;
+            flex-wrap: wrap;
+        }
+        #my1{
+            width: 50%;
+            display: flex;
+            height: 100vh;
+            
+        }
+        #my2{
+            width: 50%;
+            display: flex;
+            height: 100vh;
+            
+        }
+        #sq1{
+            position: absolute;
+            width: 13vw;
+            margin-top: 5vw;
+            margin-left: 32vw;
+            animation: rotation 3s infinite;
+        }
+        #sq2{
+            position: absolute;
+            width: 13vw;
+            margin-top: 32vw;
+            margin-left: 3vw;
+            animation: rotation 3s infinite;
+        }
+        #me{
+            position: absolute;
+            width: 28vw;
+            margin: 11vw;
+            border-radius: 50px;
+            box-shadow: 0px 0px 50px rgb(173, 173, 173);
+        }
+        #sq3{
+            position: absolute;
+            width: 13vw;
+            margin-left: 30vw;
+            margin-top: 18vw;
+            animation: rotation 3s infinite;
+        }
+        #gm{
+            position: absolute;
+            width: 28vw;
+            margin: 18vw;
+            margin-left: 15vw;
+        }
+        #gm>h1{
+            font-size: 3vw;
+            color: rgb(5, 16, 65);
+            text-shadow:  0px 0px 15px rgb(158, 158, 158);
+            
+        }
+        #occ{
+            display: flex;
+            flex-wrap: nowrap;
+            overflow: hidden;
+            animation: run ease-in-out 5s infinite;
+            margin-top: 10vh;
+            margin-bottom: 10vh;
+
+        }
+        #occ>div>p{
+            width: 100vw;
+            text-align: center;
+            font-weight: 500;
+            font-size: 2vw;
+        }
+        @keyframes rotation {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(361deg);
+        }
+      }
+        @keyframes run {
+            0%{margin-left: -200vw;}
+            50%{margin-left: -100;}
+            100%{margin-left: 0vw;}
+            
+        }
+        #projectsdiv>h1{
+            text-align: center;
+            margin-top: 7vw;
+        }
+        #projects{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            margin-top:7vw;
+        }
+        #projects>div>a>img{
+            width: 25vw;
+            border-radius: 10px;
+        }
+        #projects>div>a{
+            text-align: center;
+            text-decoration: none;
+        }
+        #projects>div{
+            padding: 2vw;
+            border-style: solid;
+            border-radius: 20px;
+            background-image: linear-gradient(45deg,rgb(197, 75, 253),rgb(121, 255, 221));
+            box-shadow: 0px 0px 50px rgb(173, 173, 173);
+        }
+        #projects>div>a>h5{
+            padding: 2vw;
+            font-size: 1.5vw ;
+        }
+        #contactdiv>h1{
+            text-align: center;
+            margin-top: 7vw;
+        }
+        #contact{
+            display: flex;
+            margin-top: 7vw;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            margin-bottom: 7vw;
+        }
+        #contact>div>img{
+            width: 20vw;
+            
+        }
+        #contact>div{
+            padding: 2vw;
+            border-style: solid;
+            border-radius: 20px;
+            background-image: linear-gradient(45deg,rgb(9, 70, 30),rgb(90, 250, 103));
+            box-shadow: 0px 0px 50px rgb(167, 167, 167);
+        }
+        #linkedin{
+            margin-top: 6vw;
+            margin-bottom: 5vw;
+        }
+        #contact>div>a{
+            text-align: center;
+            text-decoration: none;
+            color: rgb(1, 37, 2);
+        }
+        @media only screen and (max-width:600px) {
+            #welcomediv{
+                height: 85vh;
+            }
+            #my1{
+                width: 100%;
+                height: 40vh;
+            }
+            #my2{
+                width: 100%;
+                height: 40vh;
+            }
+            #me{
+                width: 50vw;
+                margin: 25vw;
+                border-radius: 35px;
+            }
+            #sq1{
+                width: 25vw;
+                margin-left: 59vw;
+                margin-top: 15vw;
+            }
+            #sq2{
+                width: 20vw;
+                margin-top: 60vw;
+                margin-left: 17vw;
+            }
+            #gm{
+                width: 50vw;
+                margin: 25vw;
+            }
+            #gm>h1{
+                font-size: 6vw;
+            }
+            #sq3{
+                width: 27vw;
+                margin-top: 25vw;
+                margin-left: 55vw;
+            }
+            #occ>div>p{
+                font-size: 5vw;
+            }
+            #projects>div>a>img{
+            width: 80vw;
+            border-radius: 10px;
+        }
+            #projects>div{
+                margin: 4vw 0;
+            }
+            #contact>div>img{
+            width: 60vw;
+            
+        }
+            #contact>div{
+                margin: 4vw 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar">
+      <div><a class="nav-link" href="#welcome-section">About</a></div>
+      <div><a class="nav-link" href="#projects">Projects</a></div>
+      <div><a class="nav-link" href="#contact">Contact</a></div>
+    </div>
+    <div id="my">
+      <section id="welcome-section">
+        <div id="welcomediv">
+          <div id="my1">
+            <div><img 
+                id="sq1"
+                src="https://raw.githubusercontent.com/vigneshnagavel/srcphotos/main/Rectangle%2021.png"
+                alt="sq"
+              /></div>
+            <div><img
+                id="sq2"
+                src="https://raw.githubusercontent.com/vigneshnagavel/srcphotos/main/Rectangle%2032.png"
+                alt="sq"
+              /></div>
+            <div><img
+                id="me"
+                src="https://raw.githubusercontent.com/vigneshnagavel/srcphotos/main/WhatsApp%20Image%202021-05-20%20at%206.53.20%20PM.jpeg"
+                alt="VigneshNagavel"
+              /></div>
+          </div>
+          <div id="my2">
+            <div><img
+                id="sq3"
+                src="https://raw.githubusercontent.com/vigneshnagavel/srcphotos/main/Rectangle%2043.png"
+                alt="sq"
+              /></div>
+            <div id = "gm"><h1 id="iam">I Am!</h1>
+                <h1 id="myname">Vignesh Nagavel</h1></div>
+          </div>
+        </div>
+        <div id="occ">
+          <div><p>Electronics and Communication Engineer</p></div>
+
+          <div><p>Developer</p></div>
+          <div><p>Graphic Designer</p></div>
+        </div>
+      </section>
+    </div>
+    <div id="projectsdiv">
+        <h1>Projects
+        </h1>
+      <section id="projects">
+        <div>
+          <a href="doc.html">
+            <img  src="https://raw.githubusercontent.com/vigneshnagavel/srcphotos/main/docpage.png" alt="docpage" />
+            <h5>Documentation</h5>
+          </a>
+        </div>
+        <div>
+          <a href="landing.html"><img src="https://raw.githubusercontent.com/vigneshnagavel/srcphotos/main/landingpage.png" alt="landingpage" />
+            <h5>Landing Page</h5></a>
+        </div>
+        <div>
+          <a href="survey.html"><img src="https://raw.githubusercontent.com/vigneshnagavel/srcphotos/main/survaeypage.png" alt="surveypage" />
+            <h5>Survey Form</h5></a>
+        </div>
+      </section>
+    </div>
+    <div id="contactdiv">
+      <h1>Contact me!</h1>
+      <section id="contact">
+          <div>
+              <img id="github" src="https://raw.githubusercontent.com/vigneshnagavel/srcphotos/main/Octocat.png" alt="github">
+              <a href="https://github.com/vigneshnagavel" target ="_blank" ><h1>@vigneshnagavel</h1></a>
+          </div>
+          <div>
+              <img id = "linkedin" src="https://raw.githubusercontent.com/vigneshnagavel/srcphotos/main/linkedin-logo-png-1840.png" alt="linkedin">
+              <a href="https://www.linkedin.com/in/vigneshnagavel/" target = "_blank"><h1>@vigneshnagavel</h1></a>
+          </div>
+      </section>
+    </div>
+  </body>
+</html>
