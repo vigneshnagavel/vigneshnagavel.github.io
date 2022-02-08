@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Deeesha</title>
+</head>
+<body>
+    <!--     Nav bar     -->
+    <div id="one">
+        <div id="navbar">
+            <img id="logo" src="images/logo.png" alt="logo">
+            <a class="navlink" href="">Home</a>
+            <a class="navlink" href="">Users</a>
+            <a class="navlink" href="">Our Products</a>
+            <a class="navlink" href="">Training</a>
+            <a class="navlink" href="">Internships</a>
+            <a class="navlink" href="">About Us</a>
+            <a class="navlink" href="">Contact</a>
+            <a class="navbtn" href="">Customer Login</a>
+            <a class="navbtn" href="">Associate Login</a>
+        </div>
+        <div id="banner">
+            <div>
+                <label class="lab" >INDIA's 1st Digital Loan Referral Chain App</label>
+            </div>
+            <div>
+                <label class="lab">Earn payout in 1 Hr (एक घंटे के अंदर) of Loan Disbursal</label>
+            </div>
+            <div>
+                <img id="phone" src="images/phone.png" alt="phone">
+                <a id="phonelink" id="phone" href="">9082658097</a>
+            </div>
+        </div>
+    </div>
+    
+    <img id="green" src="images/green.png" alt="">
+    <img id = "blue" src="images/blue.png" alt="">
+    
+    <!--       Content    -->
+    <div id="content"><!--flex-->
+        <div id="banking"><!--                1           -->
+            <div id="bankh1div">
+                <h1 id="bankh1">Our official partners - 50+ Banks in 1300+ cities & towns</h1>
+            </div>
+            <div id="bankimgdiv">
+                <img id="bankimg" src="images/bank.jpeg" alt="bank">
+            </div>
+        </div>
+        <div id="in"><!--                2         -->
+            <div id = "input">
+                <button class="tablink" onclick="openCity('London', this, '#175DA8')" id="defaultOpen">Associate</button>
+                <button class="cus tablink" onclick="openCity('Paris', this, '36B36A')">Customer</button>
+    
+                <div id="London" class="tabcontent">
+                    <div id="lon">
+                        <div id="london1">
+                            <label id="loginh1" for="">Login |</label>
+                        <label id="earn" for="">Earn Payout! on Same Day</label>
+                        </div>
+                        <div id= "london2">
+                            <input type="text" placeholder="Mobile Number">
+                        </div>
+                        <div id = "london3">
+                            <a id= "submitbtn" href="">Submit</a>
+                        </div>
+                    </div>
+                </div>
+    
+                <div id="Paris" class="tabcontent">
+                    <div id="lon">
+                        <div id="london1">
+                            <label id="loginh1" for="">Login |</label>
+                        <label id="earn" for="">Get Loan</label>
+                        </div>
+                        <div id= "london2">
+                            <input type="text" placeholder="Mobile Number">
+                        </div>
+                        <div id = "london3">
+                            <a id= "submitbtn" href="">Submit</a>
+                        </div>
+                    </div> 
+                </div>
+    
+            </div>
+        </div>
+        <div class="you1"><!--              3         -->
+            <div class="youdiv">
+                <div class = "youvid">
+                    <iframe width="450" height="252" src="https://www.youtube.com/embed/TCUFMicYWUo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="youh1">
+                    <p>लोन के लिए ग्राहक या असोसीयेट रेफर करने से कितनी होगी कमाई जानिए सब कुछ</p>
+                </div>
+            </div>
+        </div>
+        <div class="you1"><!--           4           -->
+            <div class="youdiv">
+                <div class="youvid">
+                    <iframe width="450" height="252" src="https://www.youtube.com/embed/5WgeMxU4H5w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="youh1">
+                    Referral fee payout EXPLAINED|||ENGLISH
+    
+                </div>
+            </div>
+        </div>
+        <div id = "btm">
+            <div id="botm">
+                <div>
+                    <img src="images/logo.png" alt="">
+                </div>
+                <div>
+                    <label for="">© Copyright 2021 DEEESHA.</label>
+                </div>
+                <div>
+                    <a href="">ABOUT US</a>
+                    <a href="">TRAINING </a>
+                    <a href="">PRIVACY </a>
+                    <a href="">TERMS</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+</body>
+<script>
+    function openCity(cityName,elmnt,color) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablink");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].style.backgroundColor = "";
+      }
+      document.getElementById(cityName).style.display = "block";
+      elmnt.style.backgroundColor = color;
+    
+    }
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+    </script>
+</html>
