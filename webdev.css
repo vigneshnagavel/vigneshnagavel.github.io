@@ -1,0 +1,87 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+    font-family: "Ubuntu",sans-serif;
+}
+body{
+    width: 100vw;
+}
+.heading{
+    text-align: center;
+    padding: 1em;
+    background-image: linear-gradient(45deg,rgb(26, 130, 250),rgb(24, 48, 255));
+    margin:10px 500px;
+    border-radius: 10px;
+    color: rgb(255, 255, 255);
+}
+.container{
+    display: flex;
+}
+.card{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cardimg{
+    width: 30vw; 
+    border-radius: 10px;
+}
+.cardimgdiv{
+    width: 50vw;
+    margin: 4vw 10vw;
+    background-image: linear-gradient(45deg,rgb(134, 197, 255),rgb(212, 212, 212));
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    height: 50vh;
+    border-radius: 10px;
+}
+.cardcon{
+    width: 50vw;
+}
+.cardcon>h1{
+    margin: 1vw;
+}
+.cardcon>a{
+    margin: 1vw;
+    text-decoration: none;
+    padding: 10px;
+    background-color: rgb(16, 92, 255);
+    border-radius: 5px;
+    color: white;
+}
+@media only screen and (max-width:600px){
+    
+    body{
+        width: 100vw;
+    }
+    .heading{
+        margin: 10vw;
+        font-size: 5vw;
+    }
+
+    .card{
+        flex-wrap: wrap;
+        margin-top: 20px;
+    }
+    .cardimgdiv{
+        height: 20vh;
+        width: 80vw;
+    }
+    .cardimg{
+        width: 70vw;
+    }
+    .cardcon{
+        text-align: center;
+        width: 100vw;
+    }
+    .cardcon>h1{
+        font-size: 7vw;
+        padding: 10px;
+    }
+    .cardcon>a{
+        margin: 20px;
+    }
+}

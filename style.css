@@ -6,7 +6,10 @@
 }
 body{
   width: 100vw;
-  background-image: radial-gradient(rgb(255, 255, 255),rgb(114, 163, 253));
+}
+.index{
+  width: 100vw;
+  background-image: radial-gradient(rgb(255, 255, 255),rgb(185, 226, 253));
 }
 #navbar{
   display: flex;
@@ -140,7 +143,7 @@ transform: rotate(361deg);
 #contact>div>a{
   text-align: center;
   text-decoration: none;
-  color: rgb(1, 37, 2);
+  color: rgb(255, 255, 255);
 }
 .project{
   display: flex;
