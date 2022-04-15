@@ -35,6 +35,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center; 
+    height: 50vh;
     border-radius: 10px;
 }
 .cardcon{
@@ -66,7 +67,7 @@ body{
         margin-top: 20px;
     }
     .cardimgdiv{
-        height: 20vh;
+        height: 30vh;
         width: 80vw;
     }
     .cardimg{
