@@ -1,0 +1,187 @@
+*{
+    box-sizing: border-box;
+    padding: 0%;
+    margin: 0%;
+    font-family: "poppins";
+}
+body{
+    background-image: url(https://github.com/kertstussle/kertstussle.github.io/blob/main/images/background.png?raw=true);
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+    background-size: cover;
+    
+}   
+.container{
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+}
+.nav{
+    width: 100vw;
+    height: 5vh;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 15px;
+}
+.nav>a{
+    text-decoration: none;
+    margin: 10px;
+    color: white;
+
+}
+.registerdiv{
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+}
+.kertslogo{
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.registerbtn{
+    width: 25vw;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10vw;
+}
+.kertslogoimg{
+    width: 40vw;
+}
+.registerbtn>h1{
+    color: white;
+    margin-bottom: 20px;
+}
+.registerbtn>a{
+    text-decoration: none;
+    color: rgb(50, 5, 253);
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: 500;
+}
+.registerbtn>a:hover{
+    color: rgb(255, 255, 255);
+    background-color: rgb(52, 138, 252)
+}
+.sym{
+    width: 100vw;
+    text-align: center;
+}
+.nat{
+    color: coral;
+    margin-top: 5vh;
+}
+.eventsdiv{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    text-align: center;
+    
+}
+.eventsdiv>h1{
+    color: blue;
+    background-color: white;
+    border-radius: 10px;
+    width: fit-content;
+    padding: 10px;
+    margin: 2vh;
+}
+.clg{
+    color: rgb(251, 255, 14);
+    margin-top: 10vh;
+}
+.dep{
+    color: honeydew;
+}
+.para{
+    background-color: rgba(255, 255, 255, 0.404);
+    width: 60vw;
+    border-radius: 10px;
+    padding: 3vh;
+}
+.para>p{
+    color: white;
+}
+.para>h3{
+    color: rgb(255, 230, 0);
+}
+.eventhead{
+    text-align: center;
+    margin-bottom: 3.5vw;
+    margin-top: 3.5vw;
+}
+.eventhead>h1{
+    color: white;
+}
+.contactdiv{
+    width: 100vw;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2.5vw;
+    margin-bottom: 8vw;
+}
+hr{
+    width: 80vw;
+    text-align: center;
+    margin-top: 2.5vw;
+}
+.contactdiv>h1{
+    color: blue;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+
+}
+.contactdiv>h2{
+ color: coral;
+ margin-top: 2vw;
+}
+.contactdiv>h3{
+ color: rgb(255, 238, 0);
+}
+.contactdiv>h4{
+    color: white;
+}
+
+@media only screen and (max-width: 600px) {
+    .registerdiv{
+        flex-wrap: wrap;
+        height: 40vh;
+    }
+    .kertslogo{
+        width: 100vw;
+    }
+    .kertslogoimg{
+        width: 80vw;
+    }
+    .registerbtn{
+        width: 100vw;
+        text-align: center;
+        margin: 0;
+    }
+    .para{
+        width: 80vw;
+    }
+    .nava{
+        font-size: 15px;
+    }
+}
+#snow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 1000;
+}
