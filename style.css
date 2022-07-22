@@ -2,7 +2,8 @@
   padding: 0%;
   margin: 0%;
   box-sizing: border-box;
-  font-family: "Ubuntu",sans-serif;
+  font-family: 'Poppins', sans-serif;
+  
 }
 body{
   width: 100vw;
@@ -16,7 +17,7 @@ body{
   flex-wrap: wrap;
   justify-content:flex-end;
   width: 100vw;
-  position: fixed;
+  position: absolute;
 }
 #navbar>div{
   padding: 3vmin ;
@@ -24,7 +25,11 @@ body{
 #navbar>div>a{
   text-decoration: none;
   color: rgb(253, 253, 253);
+  padding-right: 10px;
   
+}
+#navbar>div>a:hover{
+  color: rgb(28, 124, 250);
 }
 h1{
   color: white;
@@ -98,20 +103,38 @@ p{
   
   
 }
+#internshipshr{
+  margin: 0 2vw;
+  margin-top: 3vh;
+}
 #occ{
+  margin: 20vw;
+  margin-top: 20vh;
+  margin-bottom: 5vw;
+  height: 40vh;
+  background-color: rgba(255, 255, 255, 0.274);
   display: flex;
-  flex-wrap: nowrap;
-  overflow: hidden;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border-radius: 10px;
+
+  
+  /*overflow: hidden;
   animation: run ease-in-out 5s infinite;
   margin-top: 10vh;
-  margin-bottom: 10vh;
+  margin-bottom: 10vh;*/
 
 }
+#occ>div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 #occ>div>p{
-  width: 100vw;
+  
   text-align: center;
   font-weight: 500;
-  font-size: 2vw;
+  font-size: 1.5vw;
 }
 @keyframes rotation {
 from {
@@ -121,17 +144,55 @@ to {
 transform: rotate(361deg);
 }
 }
-@keyframes run {
+/*@keyframes run {
   0%{margin-left: -200vw;}
   50%{margin-left: -100;}
   100%{margin-left: 0vw;}
   
-}
+}*/
 
 
 #contactdiv>h1{
   text-align: center;
   margin-top: 7vw;
+}
+#internshipsdiv{
+  text-align: center;
+  margin-top: 3vw;
+}
+#internships{
+  display: flex;
+  margin-top: 7vw;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-bottom: 7vw;
+}
+#internships>div{
+  display: flex;
+  flex-direction: column;
+  padding: 3vw;
+  border-style: solid;
+  border-radius: 20px;
+  background-image: linear-gradient(45deg,rgb(7, 87, 124),rgb(150, 192, 247));
+  border-color: white;
+  justify-content: center;
+  
+}
+#internshipsimg{
+  margin-bottom: 3vh;
+  width: 15vw;
+}
+#internships>div>a{
+  margin-top: 3vh;
+  padding: 10px;
+  text-decoration: none;
+  color: aliceblue;
+  background-color: rgb(2, 13, 160);
+  border-radius: 10px;
+}
+#internships>div>a:hover{
+  background-color: white;
+  color:rgb(2, 13, 160);
 }
 #contact{
   display: flex;
@@ -140,16 +201,22 @@ transform: rotate(361deg);
   justify-content: space-evenly;
   margin-bottom: 7vw;
 }
-#contact>div>img{
-  width: 15vw;
+
+#contact>div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3vw;
+  background-color: rgba(255, 255, 255, 0.308);
+  border-radius: 10px;
+  /*background-image: linear-gradient(45deg,rgb(7, 87, 124),rgb(150, 192, 247));
+  border-color: white;*/
   
 }
-#contact>div{
-  padding: 3vw;
-  border-style: solid;
-  border-radius: 20px;
-  background-image: linear-gradient(45deg,rgb(7, 87, 124),rgb(150, 192, 247));
-  border-color: white;
+#contact>div>a>img{
+  width: 6vw;
+  justify-self: center;
   
 }
 #linkedin{
@@ -157,9 +224,9 @@ transform: rotate(361deg);
   margin-bottom: 5vw;
 }
 #contact>div>a{
-  text-align: center;
   text-decoration: none;
-  color: rgb(255, 255, 255);
+  display: flex;
+  
 }
 .project{
   display: flex;
@@ -206,13 +273,17 @@ transform: rotate(361deg);
   #welcomediv{
       height: 85vh;
   }
+  #navbar{
+    justify-content: center;
+  }
   #my1{
+      margin-top: 6vh;
       width: 100%;
-      height: 50vh;
+      height: 40vh;
   }
   #my2{
       width: 100%;
-      height: 50vh;
+      height: 40vh;
   }
   #me{
       width: 50vw;
@@ -234,15 +305,29 @@ transform: rotate(361deg);
       margin: 25vw;
   }
   #gm>h1{
-      font-size: 6vw;
+      font-size: 5vw;
   }
   #sq3{
       width: 27vw;
       margin-top: 25vw;
       margin-left: 55vw;
   }
+  #occ{
+    margin-top: 0vh;
+  }
   #occ>div>p{
       font-size: 5vw;
+  }
+  #internships{
+    flex-direction: column;
+    margin: 20vw;
+  }
+  #internships>div{
+    margin-bottom: 5vh;
+    border-radius: 10px;
+  }
+  #internships>div>img{
+    width: 50vw;
   }
   #projects>div>a>img{
   width: 80vw;
