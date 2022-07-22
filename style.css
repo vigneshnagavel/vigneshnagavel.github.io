@@ -107,6 +107,17 @@ p{
   margin: 0 2vw;
   margin-top: 3vh;
 }
+#cv{
+  color: white;
+  background-color: rgb(2, 2, 129);
+  padding: 10px;
+  border-radius: 10px;
+}
+#cv:hover{
+  color: rgb(2, 2, 129);
+  background-color: white;
+  
+}
 #occ{
   margin: 20vw;
   margin-top: 20vh;
@@ -173,7 +184,7 @@ transform: rotate(361deg);
   padding: 3vw;
   border-style: solid;
   border-radius: 20px;
-  background-image: linear-gradient(45deg,rgb(7, 87, 124),rgb(150, 192, 247));
+  /*background-image: linear-gradient(45deg,rgb(7, 87, 124),rgb(150, 192, 247));*/
   border-color: white;
   justify-content: center;
   
