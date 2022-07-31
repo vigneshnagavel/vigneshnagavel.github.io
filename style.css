@@ -11,6 +11,7 @@ body{
 .index{
   width: 100vw;
   background-image: radial-gradient(rgb(13, 40, 63),rgb(27, 27, 27));
+  overflow-x: hidden;
 }
 #navbar{
   display: flex;
@@ -128,6 +129,7 @@ p{
   flex-direction: column;
   justify-content: space-evenly;
   border-radius: 10px;
+  padding:  3vh 0;
 
   
   /*overflow: hidden;
@@ -192,6 +194,8 @@ transform: rotate(361deg);
 #internshipsimg{
   margin-bottom: 3vh;
   width: 15vw;
+  align-self: center;
+  padding-top: 3vh;
 }
 #internships>div>a{
   margin-top: 3vh;
@@ -312,11 +316,11 @@ transform: rotate(361deg);
       margin-left: 17vw;
   }
   #gm{
-      width: 50vw;
+      width: 80vw;
       margin: 25vw;
   }
   #gm>h1{
-      font-size: 5vw;
+      font-size: 6vw;
   }
   #sq3{
       width: 27vw;
