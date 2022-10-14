@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:"Poppins";
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 8vh;
+    justify-content: center;
+    align-items: center;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+input{
+    width: 40vw;
+    height: 7vh;
+    border-radius: 10px;
+    border-style: none;
+    background-color: rgb(224, 250, 255);
+    padding: 20px;
+    font-size: 15px;
+    margin: 3vh;
+}
+button{
+    background-color: rgb(35, 123, 255);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    border-style: none;
+    margin: 3vh;
+}
+button:hover{
+    background-color: blue;
+}
+button:active{
+    background-color: rgb(40, 40, 255);
+}
+table, th, td {
+    border: 1px solid black;
+    padding: 10px;
+    
+  }
+th{
+    background-color: rgb(4, 41, 83);
+    color: white;
+}
+h1{
+    color: rgb(2, 2, 105);
+}

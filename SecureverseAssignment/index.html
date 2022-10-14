@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etherscan</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700&amp;family=Poppins:wght@100;300;400;500;700&amp;family=Ubuntu:wght@300;500;700&amp;display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <h1>Secureverse Technologies Assignment</h1>
+        </div>
+        <div class="inputdiv">
+            <form action="#">
+                <input type="text" required name="address" id="addressinp" placeholder="Enter the address">
+            <button type="submit" onclick=run()>Submit</button>
+            </form>
+        </div>
+        <div class="output">
+            <table>
+                <thead>
+                    <tr>
+                        <th>From Wallet</th>
+                        <th>To Wallet</th>
+                        <th>Amount of Transaction</th>
+                        <th>Transaction Hash</th>
+                        <th>Block Number</th>
+                    </tr>
+                </thead>
+                <tbody id="insertrow">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+<script>
+    let apikey = "MWEF3Y2K8IKREBZQI2X36DW5BIJAAHAWKZ"
+    let addressst = "0xddbd2b932c763ba5b1b7ae3b362eac3e8d40121a"
+    function run(){
+        let input = document.getElementById("addressinp").value
+        if(input === ""){
+            alert("Enter Address")
+        }else{
+            getUser()
+        }
+    }
+
+
+    async function getUser() {
+        let input = document.getElementById("addressinp").value
+        console.log(input)
+
+        let url = "https://api.etherscan.io/api?module=account&action=txlist&address=" + input + "&startblock=0&endblock=5&page=1&offset=10&sort=asc&apikey=" + apikey
+        // Making an API call (request)
+        // and getting the response back
+        const response = await fetch(url);
+
+        // Parsing it to JSON format
+        const data = await response.json();
+        console.log(data);
+        
+        if(data.message !== "OK"){
+            alert("No transaction Found")
+        }
+        
+        tablebody = ""
+        for (var i = 0; i < data.result.length; i++) {
+            console.log(data.result[0].value)
+            tablebody = tablebody + "<tr>" + 
+                "<td>" + data.result[i].from + "</td>" +
+                "<td>" + data.result[i].to + "</td>" +
+                "<td>" + data.result[i].value + "</td>" +
+                "<td>" + data.result[i].hash + "</td>" +
+                "<td>" + data.result[i].blockNumber + "</td>" +
+
+                "</tr>"
+
+        }
+        let row = document.getElementById("insertrow").innerHTML = tablebody
+    }
+
+
+
+</script>
+
+</html>
