@@ -25,6 +25,7 @@
             <table>
                 <thead>
                     <tr>
+                        <th>TIme Stamp</th>
                         <th>From Wallet</th>
                         <th>To Wallet</th>
                         <th>Amount of Transaction</th>
@@ -57,7 +58,7 @@
         let input = document.getElementById("addressinp").value
         console.log(input)
 
-        let url = "https://api.etherscan.io/api?module=account&action=txlist&address=" + input + "&startblock=0&endblock=99999999&page=1&offset=10&sort=asc&apikey=" + apikey
+        let url = "https://api.etherscan.io/api?module=account&action=txlist&address=" + input + "&startblock=0&endblock=99999999&page=1&offset=10&sort=desc&apikey=" + apikey
         // Making an API call (request)
         // and getting the response back
         const response = await fetch(url);
@@ -74,6 +75,7 @@
         for (var i = 0; i < data.result.length; i++) {
             console.log(data.result[0].value)
             tablebody = tablebody + "<tr>" + 
+                "<td>" + data.result[i].timeStamp + "</td>" +
                 "<td>" + data.result[i].from + "</td>" +
                 "<td>" + data.result[i].to + "</td>" +
                 "<td>" + data.result[i].value + "</td>" +
