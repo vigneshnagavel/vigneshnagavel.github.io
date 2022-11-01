@@ -74,11 +74,14 @@
         tablebody = ""
         for (var i = 0; i < data.result.length; i++) {
             console.log(data.result[0].value)
+            var d = data.result[i].timeStamp*1000;
+            let crtdate =  new Date(d)
+            console.log(crtdate)
             tablebody = tablebody + "<tr>" + 
-                "<td>" + data.result[i].timeStamp + "</td>" +
+                "<td>" + crtdate + "</td>" +
                 "<td>" + data.result[i].from + "</td>" +
                 "<td>" + data.result[i].to + "</td>" +
-                "<td>" + data.result[i].value + "</td>" +
+                "<td>" + data.result[i].value/(10**18) + "</td>" +
                 "<td>" + data.result[i].hash + "</td>" +
                 "<td>" + data.result[i].blockNumber + "</td>" +
 
