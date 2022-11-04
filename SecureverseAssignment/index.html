@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container" >
         <div class="navbar">
             <div>
                 <img class="logo" src="https://pbs.twimg.com/profile_images/1527944311718850560/6f8pJAiP_400x400.jpg"
@@ -58,6 +58,7 @@
                 <p id="block"></p>
             </div>
         </div>
+        <div id="main"></div>
         <div>
             <h2>
                 Previous Transaction
@@ -126,13 +127,48 @@
                 document.getElementById("block").innerHTML = data.result[0].blockNumber
 
                 tablebody = ""
-
+                
                 for (var i = 1; i < data.result.length; i++) {
-                    console.log(data.result[0].value)
                     d = data.result[i].timeStamp * 1000;
                     crtdate = new Date(d)
+                    predate = (new Date(data.result[0].timeStamp * 1000))
+                    console.log(predate)
                     console.log(crtdate)
-                    tablebody = tablebody + "<tr>" +
+                    let parent = document.getElementById("main")
+                    let outputdiv = document.createElement("div")
+                    
+                    if (crtdate.toString() == predate.toString()) {
+                        console.log("same")
+                        parent.innerHTML = ""
+                        outputdiv.setAttribute("class", "output")
+                        parent.appendChild(outputdiv)
+                        let inp = `<div class="otpdata">
+                <p class="primaryp">From:</p>
+                <p id="from">` + data.result[i].from + `</p>
+            </div>
+            <div class="otpdata">
+                <p class="primaryp">To:</p>
+                <p id="to">` + data.result[i].to + `</p>
+            </div>
+            <div class="otpdata">
+                <p class="primaryp">Amount of Transaction:</p>
+                <p id="amttrc">` + data.result[i].value + `</p>
+            </div>
+            <div class="otpdata">
+                <p class="primaryp">Time Stamp:</p>
+                <p id="timestp">` + crtdate + `</p>
+            </div>
+            <div class="otpdata">
+                <p class="primaryp">Hash Transaction:</p>
+                <p id="hshtrc">` + data.result[i].hash + `</p>
+            </div>
+            <div class="otpdata">
+                <p class="primaryp">Block Number:</p>
+                <p id="block">` + data.result[i].blockNumber + `</p>
+            </div>`
+                    outputdiv.innerHTML = inp
+                    }else{
+                        tablebody = tablebody + "<tr>" +
                         "<td>" + data.result[i].from + "</td>" +
                         "<td>" + data.result[i].to + "</td>" +
                         "<td>" + data.result[i].value / (10 ** 18) + "</td>" +
@@ -141,6 +177,8 @@
                         "<td>" + data.result[i].blockNumber + "</td>" +
 
                         "</tr>"
+                    }
+                    
 
 
                 }
