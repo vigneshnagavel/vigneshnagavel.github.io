@@ -29,7 +29,7 @@ input {
 }
 button {
   background-color: rgb(35, 123, 255);
-  color: white; 
+  color: white;
   padding: 10px;
   border-radius: 10px;
   border-style: none;
@@ -104,4 +104,24 @@ p {
 h2 {
   margin-top: 5vh;
   color: rgb(0, 27, 58);
+}
+.incoming{
+  background-color:green;
+  padding:10px;
+  color: white;
+  border-radius: 10px;
+}
+.outgoing{
+  background-color: red;
+  padding: 10px;
+  color: white;
+  border-radius:10px ;
+}
+.outgoingdiv{
+  border-color: red;
+  background-color: rgba(255, 178, 178, 0.589);
+}
+.incomingdiv{
+  border-color: green;
+  background-color: rgba(194, 255, 194, 0.438);
 }
