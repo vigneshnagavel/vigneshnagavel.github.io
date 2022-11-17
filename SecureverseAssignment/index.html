@@ -60,6 +60,7 @@
                 <p class="primaryp">Block Number:</p>
                 <p id="block"></p>
             </div>
+            
         </div>
         <div id="main"></div>
         <div>
@@ -67,7 +68,13 @@
                 Previous Transaction
             </h2>
         </div>
-        <div class="tablediv">
+        <div class="tabs">
+            <span data-tab-value="#tab_1">Internal Transaction</span>
+            <span data-tab-value="#tab_2">ERC 20</span>
+            
+        </div>
+        <div class="tablediv tabs__tab active" id="tab_1" data-tab-info>
+            <h1>Internal Transactions</h1>
             <table>
                 <thead>
                     <tr>
@@ -81,6 +88,26 @@
                     </tr>
                 </thead>
                 <tbody id="insertrow">
+
+                </tbody>
+            </table>
+        </div>
+        <div class="tablediv tabs__tab" id="tab_2" data-tab-info>
+            <h1>ERC 20 Transactions</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>From Wallet</th>
+                        <th>To Wallet</th>
+                        <th>Amount of Transaction</th>
+                        <th>Time Stamp</th>
+                        <th>Transaction Hash</th>
+                        <th>Block Number</th>
+                        <th>Token Symbol</th>
+                        <th>Track</th>
+                    </tr>
+                </thead>
+                <tbody id="insertrow1">
 
                 </tbody>
             </table>
@@ -116,37 +143,57 @@
 
 
                 let url = "https://api.etherscan.io/api?module=account&action=txlist&address=" + input + "&startblock=0&endblock=99999999&page=1&offset=10&sort=desc&apikey=" + apikey
+                let erc = "https://api.etherscan.io/api?module=account&action=tokentx&address=" + input + "&page=1&offset=100&startblock=0&endblock=27025780&sort=desc&apikey=" + apikey
                 // Making an API call (request)
                 // and getting the response back
                 const response = await fetch(url);
 
+                const responseerc = await fetch(erc);
+
                 // Parsing it to JSON format
                 const data = await response.json();
-                console.log(data);
+                const dataerc = await responseerc.json();
+                console.log(dataerc)
 
-                if (data.message !== "OK") {
-                    alert("No transaction Found")
-                }
+                
                 var d = data.result[0].timeStamp * 1000;
                 let crtdate = new Date(d)
                 let defcolor = "outgoingdiv"
                 if (input.toLowerCase() == data.result[0].to.toString()) {
                     defcolor = "incomingdiv"
                 }
-                document.getElementById("default").setAttribute("class","output " + defcolor)
+
+                let erctokensymbol = "ETH"
+                if (dataerc === "1") {
+                    if ((data.result[0].from == dataerc.result[0].from) | (data.result[0].to == dataerc.result[0].to)) {
+                        erctokensymbol = dataerc.result[i].tokenSymbol
+                    }
+                }
+
+                document.getElementById("default").setAttribute("class", "output " + defcolor)
                 document.getElementById("from").innerHTML = data.result[0].from
                 document.getElementById("to").innerHTML = data.result[0].to
                 document.getElementById("amttrc").innerHTML = data.result[0].value / (10 ** 18)
                 document.getElementById("timestp").innerHTML = crtdate
                 document.getElementById("hshtrc").innerHTML = data.result[0].hash
                 document.getElementById("block").innerHTML = data.result[0].blockNumber
+                
+
 
                 tablebody = ""
+                tablebody1 = ""
                 document.getElementById("main").innerHTML = ""
                 for (var i = 1; i < data.result.length; i++) {
+
                     let color = "outgoing"
                     let toaddress = data.result[i].to
-                    console.log(toaddress, input)
+                    let erctokensymbolin = "ETH"
+                    if (dataerc === "1") {
+                        if ((data.result[i].from == dataerc.result[i].from) & (data.result[i].to == dataerc.result[i].to)) {
+                            erctokensymbolin = dataerc.result[i].tokenSymbol
+                        }
+                    }
+                    
                     if (input.toLowerCase() == toaddress.toString()) {
                         color = "incoming"
                         console.log("enter")
@@ -160,9 +207,8 @@
                     let outputdiv = document.createElement("div")
 
                     if (crtdate.toString() === predate.toString()) {
-                        console.log("same")
 
-                        outputdiv.setAttribute("class", "output " +color +"div" )
+                        outputdiv.setAttribute("class", "output " + color + "div")
                         parent.appendChild(outputdiv)
                         let inp = `<div class="otpdata">
                 <p class="primaryp">From:</p>
@@ -174,7 +220,7 @@
             </div>
             <div class="otpdata">
                 <p class="primaryp">Amount of Transaction:</p>
-                <p id="amttrc">` + data.result[i].value / (10 ** 18) + `</p>
+                <p id="amttrc">` + data.result[i].value / (10 ** (data.result[0].tokenDecimal)) + `</p>
             </div>
             <div class="otpdata">
                 <p class="primaryp">Time Stamp:</p>
@@ -187,7 +233,8 @@
             <div class="otpdata">
                 <p class="primaryp">Block Number:</p>
                 <p id="block">` + data.result[i].blockNumber + `</p>
-            </div>`
+            </div>
+            `
                         outputdiv.innerHTML = inp
                     } else {
 
@@ -201,12 +248,26 @@
                             "<td>" + "<a class = '" + color + "' href = '#'>" + color + "</a>" + "</td>" +
 
                             "</tr>"
+
+                            
                     }
+                    tablebody1 = tablebody1 + "<tr>" +
+                            "<td>" + dataerc.result[i].from + "</td>" +
+                            "<td>" + dataerc.result[i].to + "</td>" +
+                            "<td>" + dataerc.result[i].value / (10 ** (dataerc.result[0].tokenDecimal)) + "</td>" +
+                            "<td class = 'datet'>" + crtdate.toString().slice(0, 34) + "</td>" +
+                            "<td>" + dataerc.result[i].hash + "</td>" +
+                            "<td>" + dataerc.result[i].blockNumber + "</td>" +
+                            "<td>" + dataerc.result[i].tokenSymbol + "</td>" +
+                            "<td>" + "<a class = '" + color + "' href = '#'>" + color + "</a>" + "</td>" +
+
+                            "</tr>"
 
 
 
                 }
                 let row = document.getElementById("insertrow").innerHTML = tablebody
+                let row1 = document.getElementById("insertrow1").innerHTML = tablebody1
             }, 3000);
         }
 
@@ -216,7 +277,20 @@
     function stop() {
         quer = "stop"
     }
-
+    const tabs = document.querySelectorAll('[data-tab-value]')
+        const tabInfos = document.querySelectorAll('[data-tab-info]')
+  
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const target = document
+                    .querySelector(tab.dataset.tabValue);
+  
+                tabInfos.forEach(tabInfo => {
+                    tabInfo.classList.remove('active')
+                })
+                target.classList.add('active');
+            })
+        })
 
 
 </script>
