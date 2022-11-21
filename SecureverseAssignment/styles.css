@@ -4,6 +4,9 @@
   box-sizing: border-box;
   font-family: "Poppins";
 }
+body{
+  background-color: rgb(6, 24, 51);
+}
 .container {
   display: flex;
   flex-direction: column;
@@ -22,7 +25,7 @@ input {
   height: 7vh;
   border-radius: 10px;
   border-style: none;
-  background-color: rgb(224, 250, 255);
+  background-color: rgb(255, 255, 255);
   padding: 20px;
   font-size: 15px;
   margin: 3vh;
@@ -44,9 +47,10 @@ button:active {
 table,
 th,
 td {
-  border: 1px solid black;
+  border: 1px solid rgb(255, 255, 255);
   padding: 10px 3px;
   border-collapse: collapse;
+  background-color: rgba(232, 247, 255, 0.664);
 }
 
 th {
@@ -54,7 +58,7 @@ th {
   color: white;
 }
 h1 {
-  color: rgb(2, 2, 105);
+  color: rgb(255, 255, 255);
 }
 td {
   font-size: 12px;
@@ -64,22 +68,24 @@ td {
   flex-direction: column;
   width: 80vw;
   margin-top: 10vh;
-  border: 1px rgb(152, 203, 252) solid;
+  border: 2px rgb(152, 203, 252) solid;
   border-radius: 10px;
   padding: 2vh;
   padding-left: 6vw;
+  background-color: rgba(240, 248, 255, 0.493);
 }
 .otpdata {
   display: flex;
 }
 .primaryp {
-  color: rgb(41, 80, 255);
+  color: rgb(1, 4, 56);
   font-weight: 600;
   padding: 1.5vh 0vh;
 }
 p {
   padding: 1.5vh 0vh;
   margin-left: 2vh;
+  color: rgb(255, 255, 255);
 }
 .navbar {
   display: flex;
@@ -103,16 +109,16 @@ p {
 }
 h2 {
   margin-top: 5vh;
-  color: rgb(0, 27, 58);
+  color: rgb(255, 255, 255);
 }
 .incoming{
-  background-color:green;
+  background-color:rgb(2, 116, 2);
   padding:10px;
   color: white;
   border-radius: 10px;
 }
 .outgoing{
-  background-color: red;
+  background-color: rgb(255, 34, 34);
   padding: 10px;
   color: white;
   border-radius:10px ;
@@ -120,10 +126,12 @@ h2 {
 .outgoingdiv{
   border-color: red;
   background-color: rgba(255, 178, 178, 0.589);
+  box-shadow: 0px 0px 15px 5px rgb(255, 45, 45);
 }
 .incomingdiv{
-  border-color: green;
+  border-color: rgb(1, 218, 1);
   background-color: rgba(194, 255, 194, 0.438);
+  box-shadow:0px 0px 15px 5px rgb(136, 253, 136);
 }
 [data-tab-info] {
   display: none;
@@ -167,3 +175,4 @@ h2 {
   background-color: rgb(160, 204, 255);
   border-radius: 10px 10px 0 0;
 }
+
