@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etherscan</title>
+    <link rel="stylesheet" href="styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700&amp;family=Poppins:wght@100;300;400;500;700&amp;family=Ubuntu:wght@300;500;700&amp;display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div>
+                <img class="logo" src="https://pbs.twimg.com/profile_images/1527944311718850560/6f8pJAiP_400x400.jpg"
+                    alt="logo">
+            </div>
+            <div>
+                <h1>Secureverse Technologies - Tron Scan</h1>
+            </div>
+            <div>
+                <a href="tronscan.html" class="loginbtn">Tron Scan</a>
+                <a href="bscscan.html" class="loginbtn">Bsc Scan</a>
+                <a href="index.html" class="loginbtn">Ether Scan</a>
+            </div>
+        </div>
+        <div class="inputdiv">
+            <form onsubmit="return false">
+                <input type="text" required name="address" id="addressinp" placeholder="Enter the address">
+                <div>
+                    <p>Eg: TMuA6YqfCeX8EhbfYEg5y7S4DqzSJireY9</p>
+                </div>
+                <div class="btns">
+                    <button type="submit" onclick=run()>Submit</button>
+                    <button style="background-color: rgb(253, 74, 74);" onclick=stop()>Stop</button>
+                </div>
+            </form>
+        </div>
+        <div id="default" class="output">
+            <div class="otpdata">
+                <p class="primaryp">From:</p>
+                <p id="from"></p>
+            </div>
+            <div class="otpdata">
+                <p class="primaryp">To:</p>
+                <p id="to"></p>
+            </div>
+            <div class="otpdata">
+                <p class="primaryp">Amount of Transaction:</p>
+                <p id="amttrc"></p>
+            </div>
+            <div class="otpdata">
+                <p class="primaryp">Time Stamp:</p>
+                <p id="timestp"></p>
+            </div>
+            <div class="otpdata">
+                <p class="primaryp">Hash Transaction:</p>
+                <p id="hshtrc"></p>
+            </div>
+            <div class="otpdata">
+                <p class="primaryp">Block Number:</p>
+                <p id="block"></p>
+            </div>
+            
+        </div>
+        <div id="main"></div>
+        <div>
+            <h2>
+                Previous Transaction
+            </h2>
+        </div>
+        <div class="tablediv">
+            <table>
+                <thead>
+                    <tr>
+                        <th>From Wallet</th>
+                        <th>To Wallet</th>
+                        <th>Amount of Transaction</th>
+                        <th>Time Stamp</th>
+                        <th>Transaction Hash</th>
+                        <th>Block Number</th>
+                        <th>Track</th>
+                    </tr>
+                </thead>
+                <tbody id="insertrow">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+<script>
+    let apikey = "BI5WFT2Z6VMTG22I3KEETPXH6JJI96WWIA"
+    let deft = "0x8dd5Fc7941966448961250119db45af8aaA85D3f"
+
+    let quer = "run"
+
+    function run() {
+        let input = document.getElementById("addressinp").value
+        if (input === "") {
+            alert("Enter Address")
+        } else {
+            getUser()
+        }
+    }
+
+
+    async function getUser() {
+        quer = "run"
+        let input = document.getElementById("addressinp").value
+        console.log(input)
+        console.log(quer)
+        if ((input !== "")) {
+
+            let pro = setInterval(async function () {
+                if (quer !== "run") {
+                    clearInterval(pro)
+                }
+
+                let url = "https://apilist.tronscan.org/api/transaction?sort=-timestamp&count=true&limit=20&start=0&address=" + input
+                
+                let erc = "https://api.etherscan.io/api?module=account&action=tokentx&address=" + input + "&page=1&offset=100&startblock=0&endblock=27025780&sort=asc&apikey=" + apikey
+                // Making an API call (request)
+                // and getting the response back
+                const response = await fetch(url);
+
+                const responseerc = await fetch(erc);
+
+                // Parsing it to JSON format
+                const data = await response.json();
+                const dataerc = await responseerc.json();
+                console.log(data)
+
+               
+                var d = data.data[0].timestamp;
+                let crtdate = new Date(d)
+                let defcolor = "outgoingdiv"
+                if (input.toLowerCase() == data.data[0].toAddress.toString()) {
+                    defcolor = "incomingdiv"
+                }
+
+                let erctokensymbol = "ETH"
+                
+                document.getElementById("default").setAttribute("class", "output " + defcolor)
+                document.getElementById("from").innerHTML = data.data[0].ownerAddress
+                document.getElementById("to").innerHTML = data.data[0].toAddress
+                document.getElementById("amttrc").innerHTML = data.data[0].amount
+                document.getElementById("timestp").innerHTML = crtdate
+                document.getElementById("hshtrc").innerHTML = data.data[0].hash
+                document.getElementById("block").innerHTML = data.data[0].block
+                
+
+
+                tablebody = ""
+                document.getElementById("main").innerHTML = ""
+                for (var i = 1; i < data.data.length; i++) {
+                    let color = "outgoing"
+                    let toaddress = data.data[i].toAddress
+                    let erctokensymbolin = "ETH"
+                    if (dataerc === "1") {
+                        if ((data.data[i].from == dataerc.data[i].from) & (data.data[i].to == dataerc.data[i].to)) {
+                            erctokensymbolin = dataerc.data[i].tokenSymbol
+                        }
+                    }
+                    
+                    if (input.toLowerCase() == toaddress.toString()) {
+                        color = "incoming"
+                        console.log("enter")
+                    }
+                    d = data.data[i].timestamp ;
+                    console.log(d)
+                    crtdate = new Date(d)
+                    predate = (new Date(data.data[0].timestamp ))
+                    console.log(predate)
+                    console.log(crtdate)
+                    let parent = document.getElementById("main")
+                    let outputdiv = document.createElement("div")
+
+                    if (crtdate.toString() === predate.toString()) {
+
+                        outputdiv.setAttribute("class", "output " + color + "div")
+                        parent.appendChild(outputdiv)
+                        let inp = `<div class="otpdata">
+                <p class="primaryp">From:</p>
+                <p id="from">` + data.data[i].ownerAddress + `</p>
+            </div>
+            <div class="otpdata">
+                <p class="primaryp">To:</p>
+                <p id="to">` + data.data[i].toAddress + `</p>
+            </div>
+            <div class="otpdata">
+                <p class="primaryp">Amount of Transaction:</p>
+                <p id="amttrc">` + data.data[i].amount + `</p>
+            </div>
+            <div class="otpdata">
+                <p class="primaryp">Time Stamp:</p>
+                <p id="timestp">` + crtdate + `</p>
+            </div>
+            <div class="otpdata">
+                <p class="primaryp">Hash Transaction:</p>
+                <p id="hshtrc">` + data.data[i].hash + `</p>
+            </div>
+            <div class="otpdata">
+                <p class="primaryp">Block Number:</p>
+                <p id="block">` + data.data[i].block + `</p>
+            </div>
+            `
+                        outputdiv.innerHTML = inp
+                    } else {
+
+                        tablebody = tablebody + "<tr>" +
+                            "<td>" + data.data[i].ownerAddress + "</td>" +
+                            "<td>" + data.data[i].toAddress + "</td>" +
+                            "<td>" + data.data[i].amount + "</td>" +
+                            "<td class = 'datet'>" + crtdate.toString().slice(0, 34) + "</td>" +
+                            "<td>" + data.data[i].hash + "</td>" +
+                            "<td>" + data.data[i].block + "</td>" +
+                            "<td>" + "<a class = '" + color + "' href = '#'>" + color + "</a>" + "</td>" +
+
+                            "</tr>"
+                    }
+
+
+
+                }
+                let row = document.getElementById("insertrow").innerHTML = tablebody
+            }, 3000);
+        }
+
+    }
+    let input = document.getElementById("addressinp").value
+
+    function stop() {
+        quer = "stop"
+    }
+
+
+
+</script>
+
+</html>
