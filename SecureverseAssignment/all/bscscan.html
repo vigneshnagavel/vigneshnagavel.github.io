@@ -130,6 +130,9 @@
                 </div>
             </div>
             <div class="tablediv tabs__tab" id="tab_2" data-tab-info>
+                <div >
+                    <p style="text-align: center;" id = "alertno"></p>
+                </div>
                 <div class="intdiv">
                     <div id="default1" class="output">
                         <div class="otpdata">
@@ -225,10 +228,10 @@
                 }
 
 
-                let url = "https://api.bscscan.com/api?module=account&action=txlist&address="+input+"&startblock=0&endblock=99999999&page=1&offset=10&sort=desc&apikey=" + apikey
+                let url = "https://api.bscscan.com/api?module=account&action=txlist&address="+input+"&startblock=0&endblock=99999999&page=1&offset=15&sort=desc&apikey=" + apikey
                 //let erc = "https://api.etherscan.io/api?module=account&action=tokentx&address=" + input + "&page=1&offset=100&startblock=0&endblock=27025780&sort=desc&apikey=" + apikey
                 
-                let erc = "https://api.bscscan.com/api?module=account&action=tokentx&contractaddress=0xc9849e6fdb743d08faee3e34dd2d1bc69ea11a51&address="+input+"&page=1&offset=5&startblock=0&endblock=999999999&sort=desc&apikey=" + apikey
+                let erc = "https://api.bscscan.com/api?module=account&action=tokentx&address="+input+"&page=1&offset=15&startblock=0&endblock=999999999&sort=desc&apikey=" + apikey
                 
                 // Making an API call (request)
                 // and getting the response back
@@ -240,21 +243,31 @@
                 const data = await response.json();
                 const dataerc = await responseerc.json();
 
-
+                
+                console.log(dataerc)
 
                 var d = data.result[0].timeStamp * 1000;
                 let crtdate = new Date(d)
 
-                var d1 = dataerc.result[0].timeStamp * 1000;
+                try{
+                    var d1 = dataerc.result[0].timeStamp * 1000;
+                }catch(err){
+
+                }
                 let crtdate1 = new Date(d1)
                 let defcolor = "outgoingdiv"
+                let defcolor1 = "outgoingdiv"
                 let color = "outgoing"
+                let color1 = "outgoing"
                 console.log(dataerc)
                 if (input.toLowerCase() == data.result[0].to.toString()) {
                     defcolor = "incomingdiv"
                     color = "incoming"
                 }
-                if (input.toLowerCase() == dataerc.result[0].to.toString()) {
+                if (dataerc.message === "No transactions found"){
+                    let trans = "no"
+                }
+                else if (input.toLowerCase() == dataerc.result[0].to.toString()) {
                     defcolor1 = "incomingdiv"
                     color1 = "incoming"
                 }
@@ -271,7 +284,9 @@
                 document.getElementById("hshtrc").innerHTML = data.result[0].hash
                 document.getElementById("block").innerHTML = data.result[0].blockNumber
 
-                document.getElementById("default1").setAttribute("class", "output " + defcolor1)
+                if (dataerc.message !== "No transactions found"){
+                    document.getElementById("alertno").innerHTML = ""
+                    document.getElementById("default1").setAttribute("class", "output " + defcolor1)
                 document.getElementById("trackselect").setAttribute("class", "tracking" + color1)
                 document.getElementById("from1").innerHTML = dataerc.result[0].from
                 document.getElementById("to1").innerHTML = dataerc.result[0].to
@@ -280,6 +295,17 @@
                 document.getElementById("hshtrc1").innerHTML = dataerc.result[0].hash
                 document.getElementById("block1").innerHTML = dataerc.result[0].blockNumber
                 document.getElementById("toksym").innerHTML = dataerc.result[0].tokenSymbol
+                }else{
+                    document.getElementById("alertno").innerHTML = "No Transaction Found in BEC 20"
+                    document.getElementById("from1").innerHTML = ""
+                document.getElementById("to1").innerHTML = ""
+                document.getElementById("amttrc1").innerHTML = ""
+                document.getElementById("timestp1").innerHTML = ""
+                document.getElementById("hshtrc1").innerHTML = ""
+                document.getElementById("block1").innerHTML = ""
+                document.getElementById("toksym").innerHTML = ""
+
+                }
 
 
 
@@ -380,8 +406,12 @@
 
 
                 }
-
-                for(var i = 1; i < dataerc.result.length; i++){
+                if (dataerc.message !== "No transactions found"){
+                    document.getElementById("alertno").innerHTML = ""
+                    for(var i = 1; i < dataerc.result.length; i++){
+                    if (dataerc.message === "No transactions found"){
+                        break
+                    }
 
                     let color = "outgoing"
                     
@@ -423,7 +453,7 @@
             </div>
             <div class="otpdata">
                 <p class="primaryp">Amount of Transaction:</p>
-                <p id="amttrc1">` + dataerc.result[i].value / (10 ** (data.result[0].tokenDecimal)) + `</p>
+                <p id="amttrc1">` + dataerc.result[i].value / (10 ** (dataerc.result[0].tokenDecimal)) + `</p>
             </div>
             <div class="otpdata">
                 <p class="primaryp">Time Stamp:</p>
@@ -437,6 +467,10 @@
                 <p class="primaryp">Block Number:</p>
                 <p id="block1">` + dataerc.result[i].blockNumber + `</p>
             </div>
+            <div class="otpdata">
+                            <p class="primaryp">Token Symbol:</p>
+                            <p id="toksym">`+ dataerc.result[i].tokenSymbol+`</p>
+                        </div>
             `
                         outputdiv1.innerHTML = inp
 
@@ -456,6 +490,10 @@
                     }
 
                 }
+                }else{
+                    document.getElementById("alertno").innerHTML = "No Transaction Found in BEC 20"
+                }
+                
                 let row = document.getElementById("insertrow").innerHTML = tablebody
                 let row1 = document.getElementById("insertrow1").innerHTML = tablebody1
             }, 3000);
