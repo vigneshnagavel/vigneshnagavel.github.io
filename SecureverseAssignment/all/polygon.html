@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etherscan</title>
+    <link rel="stylesheet" href="styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700&amp;family=Poppins:wght@100;300;400;500;700&amp;family=Ubuntu:wght@300;500;700&amp;display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div>
+                <img class="logo" src="https://pbs.twimg.com/profile_images/1527944311718850560/6f8pJAiP_400x400.jpg"
+                    alt="logo">
+            </div>
+            <div>
+                <h1>Secureverse Technologies - Polygon Scan</h1>
+            </div>
+            
+            
+            <div>
+                <a href="tronscan.html" class="loginbtn">Tron Scan</a>
+                <a href="polygon.html" class="loginbtn">Polygon Scan</a>
+                <a href="bscscan.html" class="loginbtn">Bsc Scan</a>
+                <a href="index.html" class="loginbtn">Ether Scan</a>
+            </div>
+            
+        </div>
+        <div class="inputdiv">
+            <form onsubmit="return false">
+                <input type="text" required name="address" id="addressinp" placeholder="Enter the address">
+                <div>
+                    <p>Eg: 0x7bb89460599dbf32ee3aa50798bbceae2a5f7f6a</p>
+                </div>
+                <div class="btns">
+                    <button type="submit" onclick=run()>Submit</button>
+                    <button class="stop"  onclick=stop()>Stop</button>
+                    <button onclick="theme()">theme</button>
+                </div>
+            </form>
+
+        </div>
+        <div id="show">
+            <div class="tabs">
+                <div>
+                    <span data-tab-value="#tab_1">Internal Transaction</span>
+                </div>
+                <div>
+                    <span data-tab-value="#tab_2">ERC 20</span>
+                </div>
+    
+            </div>
+    
+    
+    
+    
+            <div class="tablediv tabs__tab active" id="tab_1" data-tab-info>
+                <div class="intdiv">
+                    <div id="default" class="output">
+                        <div class="insidediv">
+                            <div class="internal">
+                                <label for="">Internal</label>
+                            </div>
+                            <div id="trackselect" class="tracking">
+                                <div class="dot">
+                                    <span> </span>
+                                </div>
+                                <div class="inttrack">
+                                    <label id="tracklab" for="">Track</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="otpdata">
+                            <p class="primaryp">From:</p>
+                            <p id="from"></p>
+                        </div>
+                        <div class="otpdata">
+                            <p class="primaryp">To:</p>
+                            <p id="to"></p>
+                        </div>
+                        <hr>
+                        <div class="otpdata">
+                            <p class="primaryp">Amount of Transaction:</p>
+                            <p id="amttrc"></p>
+                        </div>
+                        <div class="otpdata">
+                            <p class="primaryp">Time Stamp:</p>
+                            <p id="timestp"></p>
+                        </div>
+                        <hr>
+                        <div class="otpdata">
+                            <p class="primaryp">Hash Transaction:</p>
+                            <p id="hshtrc"></p>
+                        </div>
+                        <div class="otpdata">
+                            <p class="primaryp">Block Number:</p>
+                            <p id="block"></p>
+                        </div>
+    
+                    </div>
+                    <div id="main"></div>
+                    <div>
+                        <h2>
+                            Previous Transaction
+                        </h2>
+                    </div>
+                    <h1>Internal Transactions</h1>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>From Wallet</th>
+                                <th>To Wallet</th>
+                                <th>Amount of Transaction</th>
+                                <th>Time Stamp</th>
+                                <th>Transaction Hash</th>
+                                <th>Block Number</th>
+                                <th>Track</th>
+                            </tr>
+                        </thead>
+                        <tbody id="insertrow">
+    
+                        </tbody>
+                    </table>
+                    <h1 class="h1bot" style="border-radius: 0px 0px 10px 10px ;">...</h1>
+                </div>
+            </div>
+            <div class="tablediv tabs__tab" id="tab_2" data-tab-info>
+                <div >
+                    <p style="text-align: center;" id = "alertno"></p>
+                </div>
+                <div class="intdiv">
+                    <div id="default1" class="output">
+                        <div class="otpdata">
+                            <p class="primaryp">From:</p>
+                            <p id="from1"></p>
+                        </div>
+                        <div class="otpdata">
+                            <p class="primaryp">To:</p>
+                            <p id="to1"></p>
+                        </div>
+                        <div class="otpdata">
+                            <p class="primaryp">Amount of Transaction:</p>
+                            <p id="amttrc1"></p>
+                        </div>
+                        <div class="otpdata">
+                            <p class="primaryp">Time Stamp:</p>
+                            <p id="timestp1"></p>
+                        </div>
+                        <div class="otpdata">
+                            <p class="primaryp">Hash Transaction:</p>
+                            <p id="hshtrc1"></p>
+                        </div>
+                        <div class="otpdata">
+                            <p class="primaryp">Block Number:</p>
+                            <p id="block1"></p>
+                        </div>
+                        <div class="otpdata">
+                            <p class="primaryp">Token Symbol:</p>
+                            <p id="toksym"></p>
+                        </div>
+    
+                    </div>
+                    <div id="main1"></div>
+                    <div>
+                        <h2>
+                            Previous Transaction
+                        </h2>
+                    </div>
+                    <h1>ERC 20 Transactions</h1>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>From Wallet</th>
+                                <th>To Wallet</th>
+                                <th>Amount of Transaction</th>
+                                <th>Time Stamp</th>
+                                <th>Transaction Hash</th>
+                                <th>Block Number</th>
+                                <th>Token Symbol</th>
+                                <th>Track</th>
+                            </tr>
+                        </thead>
+                        <tbody id="insertrow1">
+    
+                        </tbody>
+                    </table>
+                    <h1 class="h1bot" style="border-radius: 0px 0px 10px 10px ;">...</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+<script>
+    let apikey = "VGVEV5CF1Y69NG55F1D1I7CRJ4NVSMPBHT"
+    let deft = "0x8dd5Fc7941966448961250119db45af8aaA85D3f"
+    let becdef = "0x7bb89460599dbf32ee3aa50798bbceae2a5f7f6a"
+    let quer = "run"
+
+    function run() {
+        let input = document.getElementById("addressinp").value
+        if (input === "") {
+            alert("Enter Address")
+        } else {
+            showelements()
+            getUser()
+        }
+    }
+
+    function showelements(){
+        document.getElementById("show").style.display = "contents"
+    }
+    async function getUser() {
+        quer = "run"
+        let input = document.getElementById("addressinp").value
+        console.log(input)
+        console.log(quer)
+        if ((input !== "")) {
+
+            let pro = setInterval(async function () {
+                if (quer !== "run") {
+                    clearInterval(pro)
+                }
+
+                let url = "https://api.polygonscan.com/api?module=account&action=txlistinternal&address="+input+"&startblock=0&endblock=99999999&page=1&offset=20&sort=desc&apikey=" + apikey
+                //let url = "https://api.bscscan.com/api?module=account&action=txlist&address="+input+"&startblock=0&endblock=99999999&page=1&offset=15&sort=desc&apikey=" + apikey
+                //let erc = "https://api.etherscan.io/api?module=account&action=tokentx&address=" + input + "&page=1&offset=100&startblock=0&endblock=27025780&sort=desc&apikey=" + apikey
+                
+                let erc = "https://api.polygonscan.com/api?module=account&action=tokentx&address="+input+"&page=1&offset=20&startblock=0&endblock=99999999&sort=asc&apikey=" + apikey
+
+
+                //let erc = "https://api.bscscan.com/api?module=account&action=tokentx&address="+input+"&page=1&offset=15&startblock=0&endblock=999999999&sort=desc&apikey=" + apikey
+                
+                // Making an API call (request)
+                // and getting the response back
+                const response = await fetch(url);
+
+                const responseerc = await fetch(erc);
+
+                // Parsing it to JSON format
+                const data = await response.json();
+                const dataerc = await responseerc.json();
+
+                
+                console.log(dataerc)
+
+                var d = data.result[0].timeStamp * 1000;
+                let crtdate = new Date(d)
+
+                try{
+                    var d1 = dataerc.result[0].timeStamp * 1000;
+                }catch(err){
+
+                }
+                let crtdate1 = new Date(d1)
+                let defcolor = "outgoingdiv"
+                let defcolor1 = "outgoingdiv"
+                let color = "outgoing"
+                let color1 = "outgoing"
+                console.log(dataerc)
+                if (input.toLowerCase() == data.result[0].to.toString()) {
+                    defcolor = "incomingdiv"
+                    color = "incoming"
+                }
+                if (dataerc.message === "No transactions found"){
+                    let trans = "no"
+                }
+                else if (input.toLowerCase() == dataerc.result[0].to.toString()) {
+                    defcolor1 = "incomingdiv"
+                    color1 = "incoming"
+                }
+
+
+
+                document.getElementById("default").setAttribute("class", "output " + defcolor)
+                document.getElementById("trackselect").setAttribute("class", "tracking" + color)
+                document.getElementById("tracklab").innerHTML = color
+                document.getElementById("from").innerHTML = data.result[0].from
+                document.getElementById("to").innerHTML = data.result[0].to
+                document.getElementById("amttrc").innerHTML = data.result[0].value / (10 ** 18)
+                document.getElementById("timestp").innerHTML = crtdate
+                document.getElementById("hshtrc").innerHTML = data.result[0].hash
+                document.getElementById("block").innerHTML = data.result[0].blockNumber
+
+                if (dataerc.message !== "No transactions found"){
+                    document.getElementById("alertno").innerHTML = ""
+                    document.getElementById("default1").setAttribute("class", "output " + defcolor1)
+                document.getElementById("trackselect").setAttribute("class", "tracking" + color1)
+                document.getElementById("from1").innerHTML = dataerc.result[0].from
+                document.getElementById("to1").innerHTML = dataerc.result[0].to
+                document.getElementById("amttrc1").innerHTML = dataerc.result[0].value / (10 ** (dataerc.result[0].tokenDecimal))
+                document.getElementById("timestp1").innerHTML = crtdate1
+                document.getElementById("hshtrc1").innerHTML = dataerc.result[0].hash
+                document.getElementById("block1").innerHTML = dataerc.result[0].blockNumber
+                document.getElementById("toksym").innerHTML = dataerc.result[0].tokenSymbol
+                }else{
+                    document.getElementById("alertno").innerHTML = "No Transaction Found in BEC 20"
+                    document.getElementById("from1").innerHTML = ""
+                document.getElementById("to1").innerHTML = ""
+                document.getElementById("amttrc1").innerHTML = ""
+                document.getElementById("timestp1").innerHTML = ""
+                document.getElementById("hshtrc1").innerHTML = ""
+                document.getElementById("block1").innerHTML = ""
+                document.getElementById("toksym").innerHTML = ""
+
+                }
+
+
+
+                tablebody = ""
+                tablebody1 = ""
+                document.getElementById("main").innerHTML = ""
+                document.getElementById("main1").innerHTML = ""
+                for (var i = 1; i < data.result.length; i++) {
+
+
+                    let color = "outgoing"
+                    let toaddress = data.result[i].to
+                    
+                    
+                    let colorerc = "outgoing"
+
+                    if (input.toLowerCase() == toaddress.toString()) {
+                        color = "incoming"
+
+                    }
+                    
+                    d = data.result[i].timeStamp * 1000;
+                    
+                    crtdate = new Date(d)
+                    
+                    predate = (new Date(data.result[0].timeStamp * 1000))
+                    
+
+                    let parent = document.getElementById("main")
+                    let outputdiv = document.createElement("div")
+                    let parent1 = document.getElementById("main1")
+                    let outputdiv1 = document.createElement("div")
+                    let not = document.getElementById("trackselect")
+
+                    if (crtdate.toString() === predate.toString()) {
+
+                        outputdiv.setAttribute("class", "output " + color + "div")
+                        
+                        parent.appendChild(outputdiv)
+                        let inp = `
+                        <div class="insidediv">
+                        <div class="internal">
+                            <label for="">Internal</label>
+                        </div>
+                        <div class="tracking`+color+`">
+                            <div class="dot">
+                                <span> </span>
+                            </div>
+                            <div class="inttrack">
+                                <label for="">`+ color + `</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="otpdata">
+                <p class="primaryp">From:</p>
+                <p id="from">` + data.result[i].from + `</p>
+            </div>
+            <div class="otpdata">
+                <p class="primaryp">To:</p>
+                <p id="to">` + data.result[i].to + `</p>
+            </div>
+            <hr>
+            <div class="otpdata">
+                <p class="primaryp">Amount of Transaction:</p>
+                <p id="amttrc">` + data.result[i].value / (10 ** 18) + `</p>
+            </div>
+            <div class="otpdata">
+                <p class="primaryp">Time Stamp:</p>
+                <p id="timestp">` + crtdate + `</p>
+            </div>
+            <hr>
+            <div class="otpdata">
+                <p class="primaryp">Hash Transaction:</p>
+                <p id="hshtrc">` + data.result[i].hash + `</p>
+            </div>
+            <div class="otpdata">
+                <p class="primaryp">Block Number:</p>
+                <p id="block">` + data.result[i].blockNumber + `</p>
+            </div>
+            `
+                        outputdiv.innerHTML = inp
+                    }else{
+
+                    tablebody = tablebody + "<tr>" +
+                        "<td>" + data.result[i].from + "</td>" +
+                        "<td>" + data.result[i].to + "</td>" +
+                        "<td>" + data.result[i].value / (10 ** 18) + "</td>" +
+                        "<td class = 'datet'>" + crtdate.toString().slice(0, 34) + "</td>" +
+                        "<td>" + data.result[i].hash + "</td>" +
+                        "<td>" + data.result[i].blockNumber + "</td>" +
+                        "<td>" + "<a class = '" + color + "' href = '#'>" + color + "</a>" + "</td>" +
+
+                        "</tr>"
+                    }
+
+
+                    
+
+
+                }
+                if (dataerc.message !== "No transactions found"){
+                    document.getElementById("alertno").innerHTML = ""
+                    for(var i = 1; i < dataerc.result.length; i++){
+                    if (dataerc.message === "No transactions found"){
+                        break
+                    }
+
+                    let color = "outgoing"
+                    
+                    let erctoaddress = dataerc.result[i].to
+                    
+                    let colorerc = "outgoing"
+
+                    
+                    if (input.toLowerCase() == erctoaddress.toString()) {
+                        colorerc = "incoming"
+
+                    }
+                    
+                    d1 = dataerc.result[i].timeStamp * 1000;
+                    
+                    crtdate1 = new Date(d1)
+                    
+                    predate1 = (new Date(dataerc.result[0].timeStamp * 1000))
+
+                    let parent = document.getElementById("main")
+                    let outputdiv = document.createElement("div")
+                    let parent1 = document.getElementById("main1")
+                    let outputdiv1 = document.createElement("div")
+                    let not = document.getElementById("trackselect")
+
+                    
+
+
+                    if (crtdate1.toString() === predate1.toString()) {
+                        outputdiv1.setAttribute("class", "output " + colorerc + "div")
+                        parent1.appendChild(outputdiv1)
+                        let inp = `<div class="otpdata">
+                <p class="primaryp">From:</p>
+                <p id="from1">` + dataerc.result[i].from + `</p>
+            </div>
+            <div class="otpdata">
+                <p class="primaryp">To:</p>
+                <p id="to1">` + dataerc.result[i].to + `</p>
+            </div>
+            <div class="otpdata">
+                <p class="primaryp">Amount of Transaction:</p>
+                <p id="amttrc1">` + dataerc.result[i].value / (10 ** (dataerc.result[0].tokenDecimal)) + `</p>
+            </div>
+            <div class="otpdata">
+                <p class="primaryp">Time Stamp:</p>
+                <p id="timestp1">` + crtdate1 + `</p>
+            </div>
+            <div class="otpdata">
+                <p class="primaryp">Hash Transaction:</p>
+                <p id="hshtrc1">` + dataerc.result[i].hash + `</p>
+            </div>
+            <div class="otpdata">
+                <p class="primaryp">Block Number:</p>
+                <p id="block1">` + dataerc.result[i].blockNumber + `</p>
+            </div>
+            <div class="otpdata">
+                            <p class="primaryp">Token Symbol:</p>
+                            <p id="toksym">`+ dataerc.result[i].tokenSymbol+`</p>
+                        </div>
+            `
+                        outputdiv1.innerHTML = inp
+
+                    }else{
+                    tablebody1 = tablebody1 + "<tr>" +
+                        "<td>" + dataerc.result[i].from + "</td>" +
+                        "<td>" + dataerc.result[i].to + "</td>" +
+                        "<td>" + dataerc.result[i].value / (10 ** (dataerc.result[0].tokenDecimal)) + "</td>" +
+                        "<td class = 'datet'>" + crtdate1.toString().slice(0, 34) + "</td>" +
+                        "<td>" + dataerc.result[i].hash + "</td>" +
+                        "<td>" + dataerc.result[i].blockNumber + "</td>" +
+                        "<td>" + dataerc.result[i].tokenSymbol + "</td>" +
+                        "<td>" + "<a class = '" + color + "' href = '#'>" + color + "</a>" + "</td>" +
+
+                        "</tr>"
+
+                    }
+
+                }
+                }else{
+                    document.getElementById("alertno").innerHTML = "No Transaction Found in BEC 20"
+                }
+                
+                let row = document.getElementById("insertrow").innerHTML = tablebody
+                let row1 = document.getElementById("insertrow1").innerHTML = tablebody1
+            }, 3000);
+        }
+
+    }
+    let input = document.getElementById("addressinp").value
+
+    function stop() {
+        quer = "stop"
+    }
+    const tabs = document.querySelectorAll('[data-tab-value]')
+    const tabInfos = document.querySelectorAll('[data-tab-info]')
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const target = document
+                .querySelector(tab.dataset.tabValue);
+
+            tabInfos.forEach(tabInfo => {
+                tabInfo.classList.remove('active')
+            })
+            target.classList.add('active');
+        })
+    })
+
+    function theme(){
+        // Obtains an array of all <link>
+            // elements.
+            // Select your element using indexing.
+            var theme = document.getElementsByTagName('link')[0];
+  
+            // Change the value of href attribute 
+            // to change the css sheet.
+            if (theme.getAttribute('href') == 'styles.css') {
+                theme.setAttribute('href', 'darkshow.css');
+            } else {
+                theme.setAttribute('href', 'styles.css');
+            }
+    }
+
+</script>
+
+</html>
