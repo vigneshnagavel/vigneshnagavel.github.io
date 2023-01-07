@@ -227,8 +227,8 @@
                 if (quer !== "run") {
                     clearInterval(pro)
                 }
-
-                let url = "https://api.polygonscan.com/api?module=account&action=txlistinternal&address="+input+"&startblock=0&endblock=99999999&page=1&offset=20&sort=desc&apikey=" + apikey
+                let url = "https://api.polygonscan.com/api?module=account&action=txlist&address="+input+"&startblock=0&endblock=99999999&page=1&offset=20&sort=desc&apikey=" + apikey
+                //let url = "https://api.polygonscan.com/api?module=account&action=txlistinternal&address="+input+"&startblock=0&endblock=99999999&page=1&offset=20&sort=desc&apikey=" + apikey
                 //let url = "https://api.bscscan.com/api?module=account&action=txlist&address="+input+"&startblock=0&endblock=99999999&page=1&offset=15&sort=desc&apikey=" + apikey
                 //let erc = "https://api.etherscan.io/api?module=account&action=tokentx&address=" + input + "&page=1&offset=100&startblock=0&endblock=27025780&sort=desc&apikey=" + apikey
                 
