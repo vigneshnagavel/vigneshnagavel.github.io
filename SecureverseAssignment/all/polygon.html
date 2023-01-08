@@ -36,7 +36,7 @@
             <form onsubmit="return false">
                 <input type="text" required name="address" id="addressinp" placeholder="Enter the address">
                 <div>
-                    <p>Eg: 0x7bb89460599dbf32ee3aa50798bbceae2a5f7f6a</p>
+                    <p>Eg: 0xe7804c37c13166fF0b37F5aE0BB07A3aEbb6e245</p>
                 </div>
                 <div class="btns">
                     <button type="submit" onclick=run()>Submit</button>
@@ -232,7 +232,7 @@
                 //let url = "https://api.bscscan.com/api?module=account&action=txlist&address="+input+"&startblock=0&endblock=99999999&page=1&offset=15&sort=desc&apikey=" + apikey
                 //let erc = "https://api.etherscan.io/api?module=account&action=tokentx&address=" + input + "&page=1&offset=100&startblock=0&endblock=27025780&sort=desc&apikey=" + apikey
                 
-                let erc = "https://api.polygonscan.com/api?module=account&action=tokentx&address="+input+"&page=1&offset=20&startblock=0&endblock=99999999&sort=asc&apikey=" + apikey
+                let erc = "https://api.polygonscan.com/api?module=account&action=tokentx&address="+input+"&page=1&offset=20&startblock=0&endblock=99999999&sort=desc&apikey=" + apikey
 
 
                 //let erc = "https://api.bscscan.com/api?module=account&action=tokentx&address="+input+"&page=1&offset=15&startblock=0&endblock=999999999&sort=desc&apikey=" + apikey
