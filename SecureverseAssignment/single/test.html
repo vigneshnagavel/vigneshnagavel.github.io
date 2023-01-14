@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+let apikey = "MWEF3Y2K8IKREBZQI2X36DW5BIJAAHAWKZ"
+let input = "0x6dfc34609a05bC22319fA4Cce1d1E2929548c0D7"
+let pro = setInterval(async function () {
+let url = "https://api.etherscan.io/api?module=account&action=txlist&address=" + input + "&startblock=0&endblock=99999999&page=1&offset=10&sort=desc&apikey=" + apikey
+let erc = "https://api.etherscan.io/api?module=account&action=tokentx&address=" + input + "&page=1&offset=100&startblock=0&endblock=27025780&sort=desc&apikey=" + apikey
+                // Making an API call (request)
+                // and getting the response back
+                const response = await fetch(url);
+
+                const responseerc = await fetch(erc);
+
+                // Parsing it to JSON format
+                const data = await response.json();
+                const dataerc = await responseerc.json();
+                const com = data.result.concat(dataerc.result)
+                console.log(com)
+
+
+                function sortJSON(arr, key, way) {
+    return arr.sort(function(a, b) {
+        var x = a[key]; var y = b[key];
+        if (way === '123') { return ((x < y) ? -1 : ((x > y) ? 1 : 0)); }
+        if (way === '321') { return ((x > y) ? -1 : ((x < y) ? 1 : 0)); }
+    });
+}
+people2 = sortJSON(com,'timeStamp', '321');
+console.log(people2)
+                
+},3000)
+
+
+</script>
+</html>

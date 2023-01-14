@@ -1,0 +1,259 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins";
+    
+  }
+  body{
+    background-color: #F9F9F9;
+    overflow-x: hidden;
+    background-image: linear-gradient(45deg,#fdf4fb,#f7ffdb);
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 8vh;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  input {
+    width: 40vw;
+    height: 7vh;
+    border-radius: 10px;
+    border-style: none;
+    background-color: rgb(255, 193, 142);
+    padding: 20px;
+    font-size: 15px;
+    margin: 3vh;
+  }
+  button {
+    background-color: #2D4059;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    border-style: none;
+    margin: 3vh;
+  }
+  .stop{
+    background-color: rgb(253, 74, 74);
+    
+  }
+  
+  button:hover {
+    background-color: rgb(3, 3, 97);
+  }
+  button:active {
+    background-color: rgb(40, 40, 255);
+  }
+  .stop:hover{
+    background-color: red;
+  }
+  .stop:active{
+    background-color: pink;
+  }
+  table,
+  th,
+  td {
+    border: 1px solid rgb(255, 255, 255);
+    padding: 10px 3px;
+    border-collapse: collapse;
+    background-color: rgba(230, 230, 230, 0.664);
+  }
+  
+  th {
+    background-color: rgb(255, 102, 0);
+    color: white;
+  }
+  h1 {
+    color: #00005C;
+  }
+  td {
+    font-size: 12px;
+  }
+  .output {
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    margin-top: 10vh;
+    border: 2px rgb(152, 203, 252) solid;
+    border-radius: 10px;
+    padding: 2vh;
+    background-color: rgba(240, 248, 255, 0.493);
+  }
+  .otpdata {
+    display: flex;
+  }
+  .primaryp {
+    color: rgb(1, 4, 56);
+    font-weight: 600;
+    padding: 1.5vh 0vh;
+  }
+  p {
+    padding: 1.5vh 0vh;
+    margin-left: 2vh;
+    color: rgb(42, 127, 255);
+  }
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80vw;
+  }
+  .logo {
+    width: 10vh;
+    border-radius: 10px;
+  }
+  .loginbtn {
+    background-color: rgb(3, 63, 228);
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  .tablediv {
+    margin: 5vh;
+  }
+  h2 {
+    margin: 5vh;
+    color: rgb(0, 15, 78);
+  }
+  .incoming{
+    background-color:rgb(2, 116, 2);
+    padding:10px;
+    color: white;
+    border-radius: 10px;
+  }
+  .outgoing{
+    background-color: rgb(255, 34, 34);
+    padding: 10px;
+    color: white;
+    border-radius:10px ;
+  }
+  .outgoingdiv{
+    border-color: rgb(255, 99, 99);
+    background-color: rgba(255, 178, 178, 0.301);
+    box-shadow: 0px 0px 15px 5px rgb(255, 169, 169);
+  }
+  .incomingdiv{
+    border-color: rgb(1, 218, 1);
+    background-color: rgba(194, 255, 194, 0.438);
+    box-shadow:0px 0px 15px 5px rgb(136, 253, 136);
+  }
+  [data-tab-info] {
+    display: none;
+  }
+  
+  .active[data-tab-info] {
+    display: block;
+    
+  }
+  
+  .tab-content {
+    font-size: 3px;
+    font-family: sans-serif;
+    color: rgb(82, 75, 75);
+  }
+  
+  .tabs {
+    font-size: 40px;
+    color: rgb(255, 255, 255);
+    display: flex;
+    margin-top: 5vh;
+    justify-self: center;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  
+  .tabs span {
+    background: rgb(57, 147, 250);
+    padding: 10px;
+    font-size: small;
+    border: 1px solid rgba(255, 255, 255, 0);
+    border-radius: 5px;
+    margin:0 10px;
+  }
+  
+  .tabs span:hover {
+    background: rgb(0, 49, 94);
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+  }
+  .intdiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .tablediv>.intdiv>h1{
+    text-align: center;
+    margin-top: 0;
+    color: #f9f9f9;
+    background-color:#2D4059;
+    border-radius: 10px 10px 0 0;
+    width: 95vw;
+    
+  }
+  table{
+    width: 95vw;
+  }
+  .insidediv{
+    display: flex;
+    width: 75vw;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 2vh;
+  }
+  .internal{
+    background-color: #2873ff;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  .internal>label{
+    color: #ffffff;
+  }
+  .tracking{
+    display: flex;
+    background-color: rgb(1, 30, 66);
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+  }
+  .trackingoutgoing{
+    display: flex;
+    background-color: red;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+  }
+  .trackingincoming{
+    display: flex;
+    background-color: green;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+  }
+  .dot>span{
+    height: 1.5vh;
+    width: 1.5vh;
+    background-color: rgb(255, 255, 255);
+    display: inline-block;
+    border-radius: 50%;
+    margin-right: 1.25vh;
+  }
+  #show{
+    display: none;
+  }
+  
+  hr{
+    background-color: rgb(0, 0, 0);
+  }
+  
+  
