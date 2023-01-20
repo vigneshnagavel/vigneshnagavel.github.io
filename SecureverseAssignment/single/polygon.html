@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Etherscan</title>
+    <title>PolygonScan</title>
     <link rel="stylesheet" href="styles.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700&amp;family=Poppins:wght@100;300;400;500;700&amp;family=Ubuntu:wght@300;500;700&amp;display=swap"
@@ -20,13 +20,13 @@
                     alt="logo">
             </div>
             <div>
-                <h1>Secureverse Technologies - Etherscan</h1>
+                <h1>Secureverse Technologies - Polygon</h1>
             </div>
             <div>
+                
                 <a href="polygon.html" class="loginbtn">Polygon Scan</a>
                 <a href="bscscan.html" class="loginbtn">Bsc Scan</a>
                 <a href="index.html" class="loginbtn">Ether Scan</a>
-                
             </div>
         </div>
         <div class="inputdiv">
@@ -113,8 +113,8 @@
     </div>
 </body>
 <script>
-    let apikey = "MWEF3Y2K8IKREBZQI2X36DW5BIJAAHAWKZ"
-    let addressst = "0xddbd2b932c763ba5b1b7ae3b362eac3e8d40121a"
+    let apikey = "VGVEV5CF1Y69NG55F1D1I7CRJ4NVSMPBHT"
+    let deft = "0x8dd5Fc7941966448961250119db45af8aaA85D3f"
     let quer = "run"
 
     function run() {
@@ -140,8 +140,12 @@
                 }
 
 
-                let url = "https://api.etherscan.io/api?module=account&action=txlist&address=" + input + "&startblock=0&endblock=99999999&page=1&offset=10&sort=desc&apikey=" + apikey
-                let erc = "https://api.etherscan.io/api?module=account&action=tokentx&address=" + input + "&page=1&offset=10&startblock=0&endblock=27025780&sort=desc&apikey=" + apikey
+                let url = "https://api.polygonscan.com/api?module=account&action=txlist&address="+input+"&startblock=0&endblock=99999999&page=1&offset=20&sort=desc&apikey=" + apikey
+                //let url = "https://api.polygonscan.com/api?module=account&action=txlistinternal&address="+input+"&startblock=0&endblock=99999999&page=1&offset=20&sort=desc&apikey=" + apikey
+                //let url = "https://api.bscscan.com/api?module=account&action=txlist&address="+input+"&startblock=0&endblock=99999999&page=1&offset=15&sort=desc&apikey=" + apikey
+                //let erc = "https://api.etherscan.io/api?module=account&action=tokentx&address=" + input + "&page=1&offset=100&startblock=0&endblock=27025780&sort=desc&apikey=" + apikey
+                
+                let erc = "https://api.polygonscan.com/api?module=account&action=tokentx&address="+input+"&page=1&offset=20&startblock=0&endblock=99999999&sort=desc&apikey=" + apikey
                 // and getting the response back
                 const response = await fetch(url);
 
@@ -175,7 +179,7 @@
                     color = "incoming"
                 }
                 
-                let erctokensymbol = "ETH"
+                let erctokensymbol = "MATIC"
                 let divide = 10**18
                 let trx = "Internal"
                 if (data[0].hasOwnProperty("tokenSymbol")) {
@@ -201,7 +205,7 @@
                 for (var i = 1; i < data.length; i++) {
                     let color = "outgoing"
                     let toaddress = data[i].to
-                    let erctokensymbolin = "ETH"
+                    let erctokensymbolin = "MATIC"
                     let dividein = 10**18
                     let trxin = "Internal"
                     if (data[i].hasOwnProperty("tokenSymbol")) {
