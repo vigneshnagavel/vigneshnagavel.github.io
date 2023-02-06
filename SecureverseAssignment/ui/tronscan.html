@@ -8,7 +8,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700&amp;family=Poppins:wght@100;300;400;500;700&amp;family=Ubuntu:wght@300;500;700&amp;display=swap"
         rel="stylesheet">
-    <title>Secureverse-Ether</title>
+    <title>Secureverse-Tron</title>
 </head>
 <body>
     <div class="navbar">
@@ -23,10 +23,10 @@
             </div>
         </div>
         <div class="links">
-            <a href="tronscan.html">Tron Scanner</a>
+            <a class="tabscan" href="tronscan.html">Tron Scanner</a>
             <a href="polygon.html">Polygon Scanner</a>
             <a href="bscscan.html">BSC Scanner</a>
-            <a class="tabscan"  href="index.html">Ether Scanner</a>
+            <a   href="index.html">Ether Scanner</a>
 
         </div>
     </div>
@@ -142,7 +142,7 @@
 
 
 <script>
-    let apikey = "MWEF3Y2K8IKREBZQI2X36DW5BIJAAHAWKZ"
+    let apikey = "BI5WFT2Z6VMTG22I3KEETPXH6JJI96WWIA"
     let addressst = "0xddbd2b932c763ba5b1b7ae3b362eac3e8d40121a"
     let quer = "run"
 
@@ -169,31 +169,24 @@
                 }
 
 
-                let url = "https://api.etherscan.io/api?module=account&action=txlist&address=" + input + "&startblock=0&endblock=99999999&page=1&offset=10&sort=desc&apikey=" + apikey
-                let erc = "https://api.etherscan.io/api?module=account&action=tokentx&address=" + input + "&page=1&offset=10&startblock=0&endblock=27025780&sort=desc&apikey=" + apikey
+                let url = "https://apilist.tronscan.org/api/transaction?sort=-timestamp&count=true&limit=20&start=0&address=" + input
+                 let erc = "https://api.etherscan.io/api?module=account&action=tokentx&address=" + input + "&page=1&offset=10&startblock=0&endblock=27025780&sort=desc&apikey=" + apikey
                 // and getting the response back
                 const response = await fetch(url);
 
                 const responseerc = await fetch(erc);
 
                 // Parsing it to JSON format
-                const com = await response.json();
-                const dataerc = await responseerc.json();
-                const pre = com.result.concat(dataerc.result)
                 
-                function sortJSON(arr, key, way) {
-                    return arr.sort(function (a, b) {
-                        var x = a[key]; var y = b[key];
-                        if (way === '123') { return ((x < y) ? -1 : ((x > y) ? 1 : 0)); }
-                        if (way === '321') { return ((x > y) ? -1 : ((x < y) ? 1 : 0)); }
-                    });
-                }
-                data = sortJSON(pre,'timeStamp', '321');
+                const dataerc = await responseerc.json();
+                const data = await response.json();
+                
+                
                 console.log(data)
 
 
 
-                var d = data[0].timeStamp * 1000;
+                var d = data.data[0].timestamp;
                 let crtdate = new Date(d)
                 let now = new Date();
                 var diffMs = (now - crtdate); 
@@ -205,15 +198,15 @@
                 let color = "outgoing"
                 let defcolor1 = "outgoingdiv"
                 let color1 = "outgoing"
-                if (input.toLowerCase() == data[0].to.toString()) {
+                if (input.toLowerCase() == data.data[0].toAddress.toString()) {
                     defcolor = "incomingdiv"
                     color = "incoming"
                 }
                 
-                let erctokensymbol = "ETH"
-                let divide = 10**18
+                let erctokensymbol = data.data[0].tokenInfo.tokenName
+                let divide = data.data[0].tokenInfo.tokenDecimal
                 let trx = "Internal"
-                if (data[0].hasOwnProperty("tokenSymbol")) {
+                if (data.data[0].hasOwnProperty("tokenSymbol")) {
                     erctokensymbol = data[0].tokenSymbol;
                     divide = 10**(data[0].tokenDecimal)
                     trx = "External"
@@ -221,9 +214,9 @@
 
                 document.getElementById("default").setAttribute("class", "output " + defcolor)
                 document.getElementById("amtcdiv").setAttribute("class", "amtdiv " + color)
-                document.getElementById("from").innerHTML = data[0].from
-                document.getElementById("to").innerHTML = data[0].to
-                document.getElementById("amttrc").innerHTML = data[0].value / divide
+                document.getElementById("from").innerHTML = data.data[0].ownerAddress
+                document.getElementById("to").innerHTML = data.data[0].toAddress
+                document.getElementById("amttrc").innerHTML = data.data[0].amount /(10**divide)
                 document.getElementById("timestp").innerHTML = crtdate
                 document.getElementById("timebe").innerHTML = diffMins + " minutes Ago"
                 document.getElementById("trx").innerHTML = trx
@@ -233,16 +226,16 @@
 
                 tablebody = ""
                 document.getElementById("main").innerHTML = ""
-                for (var i = 1; i < data.length; i++) {
+                for (var i = 1; i < data.data.length; i++) {
                     let color = "outgoing"
-                    let toaddress = data[i].to
-                    let erctokensymbolin = "ETH"
-                    let dividein = 10**18
+                    let toaddress = data.data[i].toAddress
+                    let erctokensymbolin = data.data[0].tokenInfo.tokenName
+                    let dividein = data.data[0].tokenInfo.tokenDecimal
                     let trxin = "Internal"
-                    if (data[i].hasOwnProperty("tokenSymbol")) {
-                        erctokensymbolin = data[i].tokenSymbol;
-                        dividein = 10**(data[i].tokenDecimal)
-                        console.log(data[i].tokenDecimal)
+                    if (data.data[i].hasOwnProperty("tokenSymbol")) {
+                        erctokensymbolin = data.data[i].tokenSymbol;
+                        dividein = 10**(data.data[i].tokenDecimal)
+                        console.log(data.data[i].tokenDecimal)
                         trxin = "External"
                     }
 
@@ -250,9 +243,9 @@
                         color = "incoming"
                         
                     }
-                    d = data[i].timeStamp * 1000;
+                    d = data.data[i].timestamp ;
                     crtdate = new Date(d)
-                    predate = (new Date(data[0].timeStamp * 1000))
+                    predate = (new Date(data.data[0].timeStamp ))
                     let now = new Date();
                     var diffMs = (now - crtdate); 
                     var diffDays = Math.floor(diffMs / 86400000); 
@@ -272,11 +265,11 @@
             
             <div class="otpdata">
                 <p class="primaryp lab">From</p>
-                <p class="val " >` + data[i].from + `</p>
+                <p class="val " >` + data.data[i].ownerAddress + `</p>
             </div>
             <div class="otpdata">
                 <p class="primaryp lab">To</p>
-                <p class="val " >` + data[i].to + `</p>
+                <p class="val " >` + data.data[i].toAddress + `</p>
             </div>
             
             
@@ -288,7 +281,7 @@
                 
                 
                 <div class="amtdiv `+color+`" >
-                    <p class="amount " >` + data[i].value / dividein + `</p>
+                    <p class="amount " >` + data.data[i].amount /(10**dividein) + `</p>
                     <p  class="amtname"  >` + erctokensymbolin + `</p>
                 </div>
             </div>
@@ -316,13 +309,13 @@
                     } else {
 
                         tablebody = tablebody + "<tr>" +
-                            "<td>" +"From"+"<br>"+ data[i].from +"<br>"+"To"+"<br>"+ data[i].to + "</td>" +
+                            "<td>" +"From"+"<br>"+ data.data[i].ownerAddress +"<br>"+"To"+"<br>"+ data.data[i].toAddress + "</td>" +
                             
                             
                             "<td class = 'datet'>" + crtdate.toString().slice(0, 34) + "</td>" +
-                            "<td>" + data[i].hash + "</td>" +
-                            "<td>" + data[i].blockNumber + "</td>" +
-                            "<td class='tableamt "+color+"amt'>" + data[i].value / dividein + "</td>" +
+                            "<td>" + data.data[i].hash + "</td>" +
+                            "<td>" + data.data[i].block + "</td>" +
+                            "<td class='tableamt "+color+"amt'>" + data.data[i].amount / (10**dividein) + "</td>" +
                             "<td>" + erctokensymbolin + "</td>" +
                             
 

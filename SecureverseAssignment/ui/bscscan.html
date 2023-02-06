@@ -8,7 +8,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700&amp;family=Poppins:wght@100;300;400;500;700&amp;family=Ubuntu:wght@300;500;700&amp;display=swap"
         rel="stylesheet">
-    <title>Secureverse-Ether</title>
+    <title>Secureverse-BSC</title>
 </head>
 <body>
     <div class="navbar">
@@ -25,8 +25,8 @@
         <div class="links">
             <a href="tronscan.html">Tron Scanner</a>
             <a href="polygon.html">Polygon Scanner</a>
-            <a href="bscscan.html">BSC Scanner</a>
-            <a class="tabscan"  href="index.html">Ether Scanner</a>
+            <a class="tabscan"  href="bscscan.html">BSC Scanner</a>
+            <a  href="index.html">Ether Scanner</a>
 
         </div>
     </div>
@@ -142,7 +142,7 @@
 
 
 <script>
-    let apikey = "MWEF3Y2K8IKREBZQI2X36DW5BIJAAHAWKZ"
+    let apikey = "BI5WFT2Z6VMTG22I3KEETPXH6JJI96WWIA"
     let addressst = "0xddbd2b932c763ba5b1b7ae3b362eac3e8d40121a"
     let quer = "run"
 
@@ -169,9 +169,11 @@
                 }
 
 
-                let url = "https://api.etherscan.io/api?module=account&action=txlist&address=" + input + "&startblock=0&endblock=99999999&page=1&offset=10&sort=desc&apikey=" + apikey
-                let erc = "https://api.etherscan.io/api?module=account&action=tokentx&address=" + input + "&page=1&offset=10&startblock=0&endblock=27025780&sort=desc&apikey=" + apikey
-                // and getting the response back
+                let url = "https://api.bscscan.com/api?module=account&action=txlist&address="+input+"&startblock=0&endblock=99999999&page=1&offset=15&sort=desc&apikey=" + apikey
+                //let erc = "https://api.etherscan.io/api?module=account&action=tokentx&address=" + input + "&page=1&offset=100&startblock=0&endblock=27025780&sort=desc&apikey=" + apikey
+                
+                let erc = "https://api.bscscan.com/api?module=account&action=tokentx&address="+input+"&page=1&offset=15&startblock=0&endblock=999999999&sort=desc&apikey=" + apikey
+                
                 const response = await fetch(url);
 
                 const responseerc = await fetch(erc);

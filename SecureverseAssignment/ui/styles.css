@@ -38,7 +38,7 @@
 .links>a{
   margin: 0 1vh;
   size: 20px;
-  color: black;
+  
   text-decoration: none;
 }
 .btns{
@@ -121,6 +121,7 @@ h4{
 }
 .amtname{
   color: white;
+  overflow-x: hidden;
 }
 .amtdiv{
   display: flex;
@@ -217,4 +218,34 @@ tr:nth-child(even){background-color: #f2f2f2}
 }
 table, th, td {
   border: 5px solid rgb(255, 255, 255);
+}
+.tabscan{
+  background-color: #FF595E;
+  border-radius: 5px;
+  padding: 10px;
+  color: white;
+}
+
+.sbt:hover{
+  background-color: #3787f0;
+  color: #ffffff;
+}
+.sbt:active{
+  background-color: #ffffff;
+  color: #555B6E;
+}
+
+.stop:hover{
+  background-color: #ff343b;
+}
+
+.stop:active{
+  background-color: #FF595E;
+}
+
+.links>a:hover{
+  background-color: #555B6E;
+  padding: 10px;
+  color: white;
+  border-radius: 5px;
 }
