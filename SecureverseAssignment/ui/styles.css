@@ -267,6 +267,9 @@ table, th, td {
   align-items: center;
   text-align: center;
 }
+a{
+  text-decoration: none;
+}
 
 @media screen and (max-width:600px){
   .logo{
@@ -282,6 +285,9 @@ table, th, td {
 
   .input{
     padding: 0 5vw;
+    height: max-content;
+    padding-bottom: 3vh;
+    padding-top: 2vh;
   }
 
 
