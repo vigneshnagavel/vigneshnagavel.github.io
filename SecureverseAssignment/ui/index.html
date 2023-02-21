@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700&amp;family=Poppins:wght@100;300;400;500;700&amp;family=Ubuntu:wght@300;500;700&amp;display=swap"
         rel="stylesheet">
     <title>Secureverse-Ether</title>
 </head>
+
 <body>
     <div class="navbar">
         <div class="logodiv">
@@ -22,14 +26,21 @@
                 <p style="font-size: small; font-weight: 500;" class="logoname">Crypto Wallet</p>
             </div>
         </div>
-        <div class="links">
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <span class="material-symbols-outlined" id="menu">
+                menu
+            </span>
+        </a>
+        <div class="links topnav" id="myTopnav">
             <a href="tronscan.html">Tron Scanner</a>
             <a href="polygon.html">Polygon Scanner</a>
             <a href="bscscan.html">BSC Scanner</a>
-            <a class="tabscan"  href="index.html">Ether Scanner</a>
+            <a class="tabscan" href="index.html">Ether Scanner</a>
+            
 
         </div>
     </div>
+    <div id="menudiv"></div>
     <div class="container">
         <div class="input">
             <div class="wel">
@@ -44,20 +55,20 @@
                 <h4>
                     Wallet Address
                 </h4>
-                <div >
+                <div>
                     <form onsubmit="return false">
-                        
-                        
+
+
                         <div class="btns">
                             <input type="text" required name="address" id="addressinp" placeholder="Enter the address">
                             <button type="submit" class="sbt" onclick=run()>Submit</button>
                             <button class="stop" onclick=stop()>Stop</button>
-                            
+
                         </div>
                     </form>
                 </div>
             </div>
-            
+
         </div>
     </div>
     <div class="latest">
@@ -66,45 +77,45 @@
         </h3>
         <div class="mainlate">
             <div id="default" class="output">
-            
+
                 <div class="otpdata">
                     <p class="primaryp lab">From</p>
                     <p class="val " id="from">0xaab27b150451726ec7738aa1d0a94505c8729bd1</p>
                 </div>
                 <div class="otpdata">
                     <p class="primaryp lab">To</p>
-                    <p class="val " id="to" >0xaab27b150451726ec7738aa1d0a94505c8729bd1</p>
+                    <p class="val " id="to">0xaab27b150451726ec7738aa1d0a94505c8729bd1</p>
                 </div>
-                
-                
+
+
                 <div class="otpdata">
                     <p class="primaryp lab">Time Stamp</p>
                     <p class="val " id="timestp">Wed Jan 11 2023 19:32:23 GMT+0530 (India Standard Time)</p>
                 </div>
                 <div class="">
-                    
-                    
-                    <div id="amtcdiv" class="amtdiv incoming" >
+
+
+                    <div id="amtcdiv" class="amtdiv incoming">
                         <p class="amount " id="amttrc">0.20968447480806895</p>
-                        <p  class="amtname"  id="tokensymbol">ETH</p>
+                        <p class="amtname" id="tokensymbol">ETH</p>
                     </div>
                 </div>
-                
+
                 <div class="otpdata">
                     <hr>
                 </div>
-                
+
                 <div class="otpdata">
                     <div class="insidediv">
                         <div class="histime">
                             <p class="lab" id="timebe">0 minutes Ago</p>
                         </div>
                         <div class="internal">
-                            <label class="type" id = "trx" for="">Internal</label>
+                            <label class="type" id="trx" for="">Internal</label>
                         </div>
                     </div>
                 </div>
-    
+
             </div>
             <div id="main">
 
@@ -122,14 +133,14 @@
                 <thead>
                     <tr>
                         <th class="tablehead">Wallet</th>
-                        
-                        
+
+
                         <th class="tablehead">Time Stamp</th>
                         <th class="tablehead">Transaction Hash</th>
                         <th class="tablehead">Block Number</th>
                         <th class="tablehead">Amount of Transaction</th>
                         <th class="tablehead">Token Symbol</th>
-                        
+
                     </tr>
                 </thead>
                 <tbody id="insertrow">
@@ -145,6 +156,24 @@
     let apikey = "MWEF3Y2K8IKREBZQI2X36DW5BIJAAHAWKZ"
     let addressst = "0xddbd2b932c763ba5b1b7ae3b362eac3e8d40121a"
     let quer = "run"
+
+    let drop = 0
+
+    function myFunction() {
+        let x = document.getElementById("menudiv");
+        if(drop == 0){
+            x.innerHTML = `<div class = "mobmenu"><div><a href="tronscan.html">Tron Scanner</a></div>
+            <div><a href="polygon.html">Polygon Scanner</a></div>
+            <div><a href="bscscan.html">BSC Scanner</a></div>
+            <div><a class="tabscan" href="index.html">Ether Scanner</a></div></div>`
+
+            drop = 1
+        }else{
+            x.innerHTML = ""
+            drop = 0
+        }
+        
+    }
 
     function run() {
         let input = document.getElementById("addressinp").value
@@ -180,7 +209,7 @@
                 const com = await response.json();
                 const dataerc = await responseerc.json();
                 const pre = com.result.concat(dataerc.result)
-                
+
                 function sortJSON(arr, key, way) {
                     return arr.sort(function (a, b) {
                         var x = a[key]; var y = b[key];
@@ -188,7 +217,7 @@
                         if (way === '321') { return ((x > y) ? -1 : ((x < y) ? 1 : 0)); }
                     });
                 }
-                data = sortJSON(pre,'timeStamp', '321');
+                data = sortJSON(pre, 'timeStamp', '321');
                 console.log(data)
 
 
@@ -196,11 +225,11 @@
                 var d = data[0].timeStamp * 1000;
                 let crtdate = new Date(d)
                 let now = new Date();
-                var diffMs = (now - crtdate); 
-                var diffDays = Math.floor(diffMs / 86400000); 
-                var diffHrs = Math.floor((diffMs % 86400000) / 3600000); 
+                var diffMs = (now - crtdate);
+                var diffDays = Math.floor(diffMs / 86400000);
+                var diffHrs = Math.floor((diffMs % 86400000) / 3600000);
                 var diffMins = Math.round(((diffMs % 86400000) % 3600000) / 60000);
-                
+
                 let defcolor = "outgoingdiv"
                 let color = "outgoing"
                 let defcolor1 = "outgoingdiv"
@@ -209,13 +238,13 @@
                     defcolor = "incomingdiv"
                     color = "incoming"
                 }
-                
+
                 let erctokensymbol = "ETH"
-                let divide = 10**18
+                let divide = 10 ** 18
                 let trx = "Internal"
                 if (data[0].hasOwnProperty("tokenSymbol")) {
                     erctokensymbol = data[0].tokenSymbol;
-                    divide = 10**(data[0].tokenDecimal)
+                    divide = 10 ** (data[0].tokenDecimal)
                     trx = "External"
                 }
 
@@ -237,38 +266,38 @@
                     let color = "outgoing"
                     let toaddress = data[i].to
                     let erctokensymbolin = "ETH"
-                    let dividein = 10**18
+                    let dividein = 10 ** 18
                     let trxin = "Internal"
                     if (data[i].hasOwnProperty("tokenSymbol")) {
                         erctokensymbolin = data[i].tokenSymbol;
-                        dividein = 10**(data[i].tokenDecimal)
+                        dividein = 10 ** (data[i].tokenDecimal)
                         console.log(data[i].tokenDecimal)
                         trxin = "External"
                     }
 
                     if (input.toLowerCase() == toaddress.toString()) {
                         color = "incoming"
-                        
+
                     }
                     d = data[i].timeStamp * 1000;
                     crtdate = new Date(d)
                     predate = (new Date(data[0].timeStamp * 1000))
                     let now = new Date();
-                    var diffMs = (now - crtdate); 
-                    var diffDays = Math.floor(diffMs / 86400000); 
-                    var diffHrs = Math.floor((diffMs % 86400000) / 3600000); 
+                    var diffMs = (now - crtdate);
+                    var diffDays = Math.floor(diffMs / 86400000);
+                    var diffHrs = Math.floor((diffMs % 86400000) / 3600000);
                     var diffMins = Math.round(((diffMs % 86400000) % 3600000) / 60000);
                     let parent = document.getElementById("main")
                     let outputdiv = document.createElement("div")
 
                     if (crtdate.toString() === predate.toString()) {
 
-                        outputdiv.setAttribute("class", "output "+  color + "div")
+                        outputdiv.setAttribute("class", "output " + color + "div")
                         parent.appendChild(outputdiv)
-                        
 
 
-            let inp = `<div id="" class="">
+
+                        let inp = `<div id="" class="">
             
             <div class="otpdata">
                 <p class="primaryp lab">From</p>
@@ -287,7 +316,7 @@
             <div class="">
                 
                 
-                <div class="amtdiv `+color+`" >
+                <div class="amtdiv `+ color + `" >
                     <p class="amount " >` + data[i].value / dividein + `</p>
                     <p  class="amtname"  >` + erctokensymbolin + `</p>
                 </div>
@@ -300,10 +329,10 @@
             <div class="otpdata">
                 <div class="insidediv">
                     <div class="histime">
-                        <p class="lab" id="timebe">`+diffMins+` minutes Ago</p>
+                        <p class="lab" id="timebe">`+ diffMins + ` minutes Ago</p>
                     </div>
                     <div class="internal">
-                        <label class="type" id = "trx" for="">`+trxin+`</label>
+                        <label class="type" id = "trx" for="">`+ trxin + `</label>
                     </div>
                 </div>
             </div>
@@ -316,15 +345,15 @@
                     } else {
 
                         tablebody = tablebody + "<tr>" +
-                            "<td>" +"From"+"<br>"+ data[i].from +"<br>"+"To"+"<br>"+ data[i].to + "</td>" +
-                            
-                            
+                            "<td>" + "From" + "<br>" + data[i].from + "<br>" + "To" + "<br>" + data[i].to + "</td>" +
+
+
                             "<td class = 'datet'>" + crtdate.toString().slice(0, 34) + "</td>" +
                             "<td>" + data[i].hash + "</td>" +
                             "<td>" + data[i].blockNumber + "</td>" +
-                            "<td class='tableamt "+color+"amt'>" + data[i].value / dividein + "</td>" +
+                            "<td class='tableamt " + color + "amt'>" + data[i].value / dividein + "</td>" +
                             "<td>" + erctokensymbolin + "</td>" +
-                            
+
 
                             "</tr>"
                     }
@@ -346,4 +375,5 @@
 
 
 </script>
+
 </html>

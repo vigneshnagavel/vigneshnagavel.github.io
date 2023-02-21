@@ -249,3 +249,128 @@ table, th, td {
   color: white;
   border-radius: 5px;
 }
+
+#menu{
+  display: none;
+}
+
+.mobmenu{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  height: 30vh;
+  justify-content: center;
+  margin-top: 5vh;
+}
+.mobmenu>div{
+  width: 80vw;
+  align-items: center;
+  text-align: center;
+}
+
+@media screen and (max-width:600px){
+  .logo{
+    margin-left: 1vw;
+  }
+  #menu{
+    display: block;
+    margin-right: 1vw;
+  }
+  .links{
+    display: none;
+  }
+
+  .input{
+    padding: 0 5vw;
+  }
+
+
+  .btns{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  .btns>input{
+    width: 90vw;
+  }
+  .btns>button{
+    width: 20vw;
+    margin-top: 2vh;
+  }
+
+  .latest{
+    padding: 5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .mainlate{
+    flex-direction: column ;
+    justify-content: center;
+  }
+
+  #main{
+    flex-direction: column;
+  }
+
+  .output{
+    width: 80vw;
+    height: max-content;
+    margin-top: 2vh;
+  }
+  .amtdiv{
+    height: 5vh;
+  }
+  .tabtrx{
+    margin: 5vw 5vw;
+  }
+  table, thead, tbody, th, td, tr { 
+		display: block; 
+	}
+	
+	/* Hide table headers (but not display: none;, for accessibility) */
+	thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	tr { border: 1px solid #ccc;
+    margin-top: 2vh;  }
+	
+	td { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 30%;
+    overflow-wrap: break-word;
+    
+	}
+	
+	td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+    
+	}
+	
+	/*
+	Label the data
+	*/
+	td:nth-of-type(1):before { content: "Wallet"; }
+	td:nth-of-type(2):before { content: "Time Stamp"; }
+	td:nth-of-type(3):before { content: "Hash"; }
+	td:nth-of-type(4):before { content: "Block Number"; }
+	td:nth-of-type(5):before { content: "Amount"; }
+	td:nth-of-type(6):before { content: "Token Symbol"; }
+	
+}
