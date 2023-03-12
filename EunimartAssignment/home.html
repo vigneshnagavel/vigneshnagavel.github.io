@@ -52,13 +52,17 @@
     window.onload = async function () {
 
         var value = "Welcome " + localStorage.getItem('name_value');
+        let name = localStorage.getItem('name_value');
+        let phone = localStorage.getItem('phone_number');
+        let mail = localStorage.getItem('mail_id');
 
 
         var output = document.getElementById('welcome_name');
         output.innerText = value;
 
-        if(value == "Welcome null"){
+        if(name == null || phone == null || mail == null){
             alert("You are not valid user to view this content kindly login to proceed")
+            window.location.href = 'index.html'
             return
         }
 
