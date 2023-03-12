@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;0,900;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="homebody">
+    <div class="navbar">
+        <div class="welcome">
+            <h2 id=welcome_name></h2>
+        </div>
+        <div class="logoutdiv">
+            <button class="logoutbtn" onclick="deletelocal()">Logout</button>
+        </div>
+    </div>
+    <div class="homecontainer">
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Avatar</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody id="insertrow">
+
+            </tbody>
+        </table>
+    </div>
+    
+</body>
+
+</html>
+<script>
+
+    let url = "https://reqres.in/api/users";
+
+
+
+    window.onload = async function () {
+
+        var value = "Welcome " + localStorage.getItem('name_value');
+
+
+        var output = document.getElementById('welcome_name');
+        output.innerText = value;
+
+        if(value == "Welcome null"){
+            alert("You are not valid user to view this content kindly login to proceed")
+            return
+        }
+
+
+
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                const jsonData = data;
+                display(jsonData)
+                console.log(jsonData)
+            })
+            .catch(error => console.error(error));
+
+        function display(data) {
+            let l = data.data.length
+            let tablebody = "";
+            for (let i = 0; i < l; i++) {
+                tablebody = tablebody + "<tr onclick = "+"window.location.href="+"'about.html?id="+data.data[i].id+"'>" +
+                    "<td>" + data.data[i].id + "</td>" +
+                    "<td>" + "<img class='tableimg' src = " + data.data[i].avatar + ">" + "</td>" +
+                    "<td>" + data.data[i].first_name + "</td>" +
+                    "<td>" + data.data[i].last_name + "</td>" +
+                    "<td>" + data.data[i].email + "</td>" +
+                     
+
+                    "</tr>"
+            }
+            document.getElementById("insertrow").innerHTML = tablebody
+
+        }
+
+        
+    };
+
+    function deletelocal(){
+
+        localStorage.clear();
+        window.location.href = 'index.html';
+    }
+
+</script>

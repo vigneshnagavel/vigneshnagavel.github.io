@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+</head>
+
+<body>
+    <p id="value-output"></p>
+    <div class="homecontainer">
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Avatar</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>    
+                </tr>
+            </thead>
+            <tbody id="insertrow">
+
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
+<script>
+
+    let url = "https://reqres.in/api/users";
+
+
+
+    window.onload = async function () {
+
+
+
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                const jsonData = data;
+                display(jsonData)
+                console.log(jsonData)
+            })
+            .catch(error => console.error(error));
+
+        function display(data){
+            let l = data.data.length
+            let tablebody = "";
+            for(let i = 0;i<l;i++){
+                tablebody = tablebody + "<tr>" +
+                        "<td>" + data.data[i].id + "</td>" +
+                        "<td>" + "<img src = "+data.data[i].avatar+">" + "</td>" +
+                        "<td>" + data.data[i].first_name  + "</td>" +
+                        "<td>" + data.data[i].last_name + "</td>" +
+                        "<td>" + data.data[i].email + "</td>" +
+
+                        "</tr>"
+            }
+            document.getElementById("insertrow").innerHTML = tablebody
+            
+        }
+
+        var value = localStorage.getItem('name_value');
+
+        
+        var output = document.getElementById('value-output');
+        output.innerText = value;
+    };
+</script>

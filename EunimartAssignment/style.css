@@ -1,0 +1,151 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+.container{
+   margin-top: 0px; 
+   width: 100vw;
+   height: 100vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-image: linear-gradient(45deg,rgb(0, 49, 155),rgb(87, 216, 255));
+
+}
+.loginpage{
+    display: flex;
+    background-color: rgba(214, 214, 250, 0.349);
+    border-radius: 10px;
+    flex-direction: column;
+    padding: 5vw;
+    width: 50vw;
+    
+    justify-content: center;
+    align-items: center;
+}
+.loginpage>div{
+    margin-top: 5vh;
+}
+input{
+    width: 40vw;
+    height: 50px;
+    padding: 10px;
+    font-weight: 500;
+    border-radius: 5px;
+    border-style: none;
+}
+#sub_btn{
+    width: 10vw;
+    height: 50px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 20, 196);
+    border-radius: 10px;
+    font-weight: 700;
+    border-style: none;
+}
+.mainh1{
+    color: white;
+
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    height: 75px;
+    align-items: center;
+    
+}
+.welcome{
+    margin-left: 3vw;
+}
+.logoutdiv{
+    margin-right: 3vw;
+}
+.logoutbtn{
+    width: 7vw;
+    height: 50px;
+    background-color: rgb(0, 53, 22);
+    color: white;
+    border-radius: 10px;
+    border-style: none;
+}
+
+.logoutbtn:hover{
+    background-color: rgb(3, 155, 72);
+}
+.homecontainer{
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+
+}
+table{
+    width: 90vw;
+    margin-top: 5vh;
+    margin-left: 3vw;
+    margin-right: 3vw;
+    text-align: center;
+    background-color: rgba(248, 248, 248, 0.26);
+    border-radius: 10px;
+    margin-bottom: 5vh;
+}
+th{
+    background-color: rgb(2, 59, 26);
+    height: 50px;
+    color: white;
+    border-radius: 10px;
+}
+tr:hover{
+    background-color: rgba(255, 255, 255, 0.295);
+}
+.aboutbody{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    background-image: linear-gradient(45deg,rgb(253, 175, 102),rgb(201, 108, 2));
+}
+.aboutcontainer{
+    display: flex;
+    width: 60vw;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.534);
+    height: 65vh;
+    border-radius: 10px;
+    flex-wrap: wrap;
+    margin-top: 2vh;
+}
+#photo{
+    width: 20vw;
+    border-radius: 10px;
+}
+
+.homebody{
+    background-image: linear-gradient(45deg,rgb(88, 243, 165),rgb(0, 82, 18));
+    height: 100vh;
+}
+
+.tableimg{
+    margin: 2vh;
+    border-radius: 10px;
+}
+#welcome_name{
+    color: rgb(1, 56, 24);
+}
+.dv{
+    width: 100rem;
+    text-align: center;
+}
+.dv>h1{
+    color: white;
+}
+.detailsdiv>p{
+    color: rgb(126, 62, 3);
+}
