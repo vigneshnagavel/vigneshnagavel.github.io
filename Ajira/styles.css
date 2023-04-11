@@ -1,0 +1,380 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+    overflow-x: hidden;
+    
+}
+body{
+    display: flex;
+    flex-direction: column;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+    height: 10vh;
+    align-items: center;
+    box-shadow: 0px 1px 20px rgba(255, 255, 255, 0);
+    position: fixed;
+    background-color: rgb(255, 255, 255);
+    z-index: 2;
+}
+.leftnav>a{
+    margin-left: 20px;
+    font-weight: 900;
+    font-size: 25px;
+    color: black;
+}
+.rightnav{
+    display: flex;
+}
+.navlinks>a{
+    margin-right: 2vw;
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+}
+.wrapper{
+    background-color: black;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.logoimg{
+    width: 40vw;
+}
+.maincon{
+    margin-top: 10vh;
+    align-items: center;
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+.works{
+    background-color: white;
+    height: 100vh;
+}
+
+.works{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.worksdiv{
+    background-color: black;
+    border-radius: 20px;
+    width: 25vw;
+    height: 28vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.637);
+  transition: all 0.3s ease-out;
+     
+}
+.worksdiv:hover{
+    transform: translateZ(10px);
+  box-shadow: inset 0 0 10px rgb(255, 255, 255), 0 0 30px rgb(0, 0, 0);
+  
+}
+.worksdiv>h3{
+    color: white;
+    
+}
+.worksimg{
+    width: 5vw;
+}
+.clients{
+    background-color: black;
+    height: 100vh;
+    display: flex;
+    
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+
+}
+.clientshead>h1{
+    color: white;
+    border-style: solid;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-top: 0vh;
+}
+.slider{
+    display: flex;
+    position: inherit;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow-x: hidden;
+    white-space: nowrap;
+    z-index: 1;
+}
+.cardcli{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  width: 25vw;
+  height: 28vh;
+  background-color: rgb(255, 255, 255);
+  border-radius: 15px;
+  margin-right: 20px;
+  animation: slide 60s infinite;
+}
+.cardcli:hover{
+    
+    
+}
+.climg{
+    width: 20vw;
+}
+@keyframes slide {
+    0% {
+      transform: translateX(2500px); /* starting position */
+    }
+    50% {
+      transform: translateX(-2500px); /* ending position */
+    }
+    100% {
+        transform: translateX(2500px); /* ending position */
+      }
+  }
+.comments{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100vh;
+}
+.comdiv{
+    margin-top: 5vh;
+    width: 40vw;
+    padding: 20px;
+    border-style: solid;
+    border-radius: 10px;
+    border-width: 1px;
+}
+.team{
+    background-color: black;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    
+}
+.teamhead{
+    margin: 5vh 0vh;
+}
+.teamdiv{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 0 7vw;
+}
+.teamimg{
+    width: 7vw;
+    
+}
+.teamcard{
+    margin: 20px 20px;
+    border-radius: 10px;
+    
+    
+}
+.teamq{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    width: 40vw;
+    height: 7vw;
+    
+    
+}
+.teamq>h1{
+    text-align: center;
+    font-weight: 900;
+    font-size: 9vh;
+}
+.thoughts{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.thobox{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 5vh 0;
+}
+.thodiv{
+    width: 30vw;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 2vh 0;
+
+}
+.thohead>h1{
+    color: black;
+    margin: 5vh 0;
+}
+.publications{
+    background-color: black;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.pubhead{
+    color: white;
+    border-style: solid;
+    border-radius: 10px;
+    padding: 10px;
+}
+.pubcard{
+    margin-top: 5vh;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: white;
+    width: 60vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 20px;
+}
+.pubimg{
+    width: 70vw;
+    margin-right: 20px ;
+    border-radius: 10px;
+}
+.pubcard>p{
+    color: white;
+}
+.contactus{
+    background-image: linear-gradient(45deg,rgb(2, 60, 252),rgb(53, 147, 255));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.conthead>h1{
+    color: white;
+    background-color: rgba(255, 255, 255, 0.24);
+    padding: 10px;
+    margin: 5vh 0;
+    border-radius: 10px;
+
+}
+.modes{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0;
+
+}
+.modes>div{
+    height: 20vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+
+}
+.modes>div>a{
+    color: white;
+    margin: 0 5vh;
+    border-style: solid;
+    padding: 10px;
+    border-radius: 5px;
+
+}
+.maps{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.mapcard{
+    display: flex;
+    width: 80vw;
+    margin-top: 5vh;
+    
+}
+.mapcard>div{
+    margin:  5vh;
+}
+.mapcard>div>h4{
+    color: white;
+    font-weight: 400;
+}
+.mapcard>div>h2{
+    color: white;
+}
+iframe{
+    border-radius: 15px;
+}
+.bc{
+    position: absolute;
+    top: 0;
+    left: -20vw;
+    width: 30vw;
+    animation: rotate 10s linear infinite;
+}
+.bc1{
+    position: absolute;
+    top: 60vh;
+    right: -20vw;
+    width: 30vw;
+    animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.rulerdiv{
+    
+    
+    width: 100vw;
+    justify-content: flex-start;
+}
+.ruler{
+    
+    
+    width: 70vw;
+    height: 7vh;
+    bottom: 0;
+    position: absolute;
+    animation: fadeout 5s infinite;
+    
+}
+@keyframes fadeout {
+    0% {
+      opacity: 1;
+      left: -300px;
+      bottom: -40px;
+    }
+    100% {
+      opacity: 0;
+      left: -200px;
+      bottom: 0px;
+    }
+  }
