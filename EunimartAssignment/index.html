@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,11 +8,14 @@
     <title>Login page</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;0,900;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;0,900;1,900&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
-    
+
     <div class="container">
 
         <div class="loginpage">
@@ -25,14 +29,16 @@
             </div>
 
             <div>
-                <input id="mail-input" class="inp" placeholder="Email" type="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                <input id="mail-input" class="inp" placeholder="Email" type="email" required
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
             </div>
             <div>
-                <input id="phone-input" class="inp" placeholder="Phone Number" type="tel" pattern="[0-9]{10}" name="country_code" maxlength="10"> 
+                <input id="phone-input" class="inp" placeholder="Phone Number" type="tel" pattern="[0-9]{10}"
+                    name="country_code" maxlength="10">
             </div>
-            
+
             <div>
-                <button type="submit" onclick="submitValue()" id = "sub_btn">Submit</button>
+                <button type="submit" onclick="submitValue()" id="sub_btn">Submit</button>
             </div>
         </div>
 
@@ -45,21 +51,32 @@
 </html>
 <script>
 
-function submitValue() {
-        
+    window.onload = function() {
+        let name = localStorage.getItem('name_value');
+        let phone = localStorage.getItem('phone_number');
+        let mail = localStorage.getItem('mail_id');
+        if (name != null && phone != null && mail != null) {
+            
+
+            window.location.href = 'home.html';
+        }
+    }
+
+    function submitValue() {
+
         var name = document.getElementById('name-input').value;
         var phone = document.getElementById('phone-input').value;
         var mail = document.getElementById('mail-input').value;
-        
-       
-        if(name != "" && phone != "" && mail != ""){
+
+
+        if (name != "" && phone != "" && mail != "") {
             localStorage.setItem('name_value', name);
-        localStorage.setItem('phone_number', phone);
-        localStorage.setItem('mail_id', mail);
-        
-        window.location.href = 'home.html';
-        }else{
+            localStorage.setItem('phone_number', phone);
+            localStorage.setItem('mail_id', mail);
+
+            window.location.href = 'home.html';
+        } else {
             alert("Fill the Details Properly to proceed further")
         }
-      }
+    }
 </script>

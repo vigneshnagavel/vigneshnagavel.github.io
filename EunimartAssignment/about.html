@@ -19,7 +19,7 @@
         <h1>Detailed View</h1>
     </div>
     <div class="aboutcontainer">
-        
+
         <div class="photodiv">
             <img id="photo" src="" alt="">
         </div>
@@ -44,25 +44,29 @@
     const number = urlParams.get('id');
     console.log(number)
 
+    if(number == null){
+        window.location.href = "index.html"
+    }
+
     let url = "https://reqres.in/api/users/" + number
     window.onload = async function () {
-    fetch(url)
-        .then(response => response.json())
-        .then(data => {
-            const jsonData = data;
-            display(jsonData)
-            console.log(jsonData)
-        })
-        .catch(error => console.error(error));
-    
-    
-    function display(data){
-        document.getElementById("photo").setAttribute("src",data.data.avatar)
-        document.getElementById("fnameshow").innerHTML = data.data.first_name
-        document.getElementById("lnameshow").innerHTML = data.data.last_name
-        document.getElementById("idshow").innerHTML =data.data.id
-        document.getElementById("emailshow").innerHTML = data.data.email
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                const jsonData = data;
+                display(jsonData)
+                console.log(jsonData)
+            })
+            .catch(error => console.error(error));
+
+
+        function display(data) {
+            document.getElementById("photo").setAttribute("src", data.data.avatar)
+            document.getElementById("fnameshow").innerHTML = data.data.first_name
+            document.getElementById("lnameshow").innerHTML = data.data.last_name
+            document.getElementById("idshow").innerHTML = data.data.id
+            document.getElementById("emailshow").innerHTML = data.data.email
+        }
     }
-}
 
 </script>
