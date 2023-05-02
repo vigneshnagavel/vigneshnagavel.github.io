@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VSB Engineering College Karur</title>
+    <link rel="stylesheet" href="styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700&family=Poppins:wght@100;300;400;500;700&family=Ubuntu:wght@300;500;700&display=swap"
+        rel="stylesheet">
+</head>
+<body>
+    <div class="navbar">
+        <div class="namebar">
+            <div class="logosection">
+                <div>
+                    <img class="logo" src="./images/logo.png" alt="">
+                </div>
+                <div class="clgname">
+                    <h1>VSB Engineering College</h1>
+                    <h3>Autonomous | Karur</h3>
+                </div>
+            </div>
+            <div class="linksection">
+                <a class=" atag admissiona" href="#">Admission</a>
+                <a class="atag" href="#">NIRF</a>
+                <a class="atag" href="#">ARIIA</a>
+                <a class="atag" href="#">IQAC</a>
+                <a class="atag" href="#">*NBA</a>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="sliderwrap">
+        <div class="slider">
+            <div class="leftslider">
+                <h1>hello</h1>
+            </div>
+            <div class="rightslider">
+                <div class="slideshow">
+                    <div class="slide active">
+                        <img class="slideimg" src="https://vsbecinstitution.github.io/images/WhatsApp%20Image%202023-03-28%20at%206.11.02%20AM.jpeg" alt="">
+                    </div>
+                    <div class="slide">
+                        <img src="https://vsbecinstitution.github.io/images/WhatsApp%20Image%202023-03-28%20at%206.12.14%20AM.jpeg" alt="" class="slideimg">
+                    </div>
+                    <div class="slide">
+                        <img src="https://vsbecinstitution.github.io/images/WhatsApp%20Image%202023-03-28%20at%206.11.50%20AM.jpeg" alt="" class="slideimg">
+                    </div>
+                    <div class="slide">
+                        <img src="https://vsbecinstitution.github.io/images/WhatsApp%20Image%202023-03-28%20at%206.11.26%20AM.jpeg" alt="" class="slideimg">
+                    </div>
+                    <div class="slide">
+                        <img src="https://vsbecinstitution.github.io/images/WhatsApp%20Image%202022-08-02%20at%2011.50.39%20AM.jpeg" alt="" class="slideimg">
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+<script>
+    var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("slide");
+  for (i = 0; i < x.length; i++) {
+    x[i].classList.remove("active");
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1} 
+  x[myIndex-1].classList.add("active");    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 5000); // Change image every 2 seconds
+}
+</script>
+</html>
