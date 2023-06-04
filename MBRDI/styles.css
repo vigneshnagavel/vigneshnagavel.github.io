@@ -1,0 +1,364 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'Poppins', serif;
+    overflow-x: hidden;
+}
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar{
+    background-color: black;
+    height: 10vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+}
+.container{
+    margin-top: 10vh;
+}
+.logodiv{
+    display: flex;
+    align-items: center;
+    
+}
+
+.logo{
+    width: 7vh;
+    margin-left: 1vw;
+}
+.logoname{
+    color: white;
+    font-weight: 400;
+    margin-left: 1vw;
+}
+.linkdiv{
+    display: flex;
+    align-items: center;
+    margin-right: 2vw;
+}
+.linkdiv>a{
+    color: white;
+    margin-left: 2.5vw;
+}
+.welcomediv{
+    width: 100vw;
+    height: 90vh;
+    background-color: black;
+    display: flex;
+    background-image: url("./img/background.png");
+    background-size: cover;
+}
+.welcomeone{
+    margin-top: 5vh;
+    color: white;
+    font-size: 5vh;
+}
+.welcometwo{
+    color: white;
+    font-weight: 400;
+    font-size: 2vh;
+}
+.welcomenote{
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    width: 35vw;
+    justify-content: center;
+    align-items: center;
+}
+.slidediv{
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+.slide{
+    border-style: solid;
+    
+    width: 40vw;
+    border-radius: 10px;
+    height: 80vh;
+}
+.slidename{
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.slideimg{
+    width: 40vw;
+    border-radius: 20px;
+}
+
+.who{
+    
+    display: flex;
+    justify-content: center;
+    
+    
+   
+}
+.inlogo{
+    width: 40vh;
+}
+.whodiv{
+    width: 80vw;
+    margin-top: 10vh;
+    margin-bottom: 20vh;
+    
+}
+.whodiv>h1{
+    margin-bottom: 5vh;
+}
+.eimg{
+    width: 100vw;
+    height: 90vh;
+    background-image: url(https://hips.hearstapps.com/hmg-prod/images/23c0125-001-642f1ac15d999.jpg);
+    background-size:cover ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.what{
+    width: 80vw;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    
+}
+.wedo{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5vh;
+    width: 80vw;
+}
+.card{
+    height: 50vh;
+    width: 18vw;
+    background-color: rgba(255, 255, 255, 0.192);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 10px;
+}
+.card>div{
+    
+    width: 15vw;
+    height: 35vh;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    
+    
+}
+.card>h3{
+    font-size: 15px;
+    width: 15vw;
+    text-align: center;
+}
+.card1{
+    background-image: url(https://boofos.com/wp-content/uploads/2011/05/design-studio-of-mercedes-benz-in-como-italy-091.jpg);
+}
+.card2{
+    background-image: url(https://cdn.cnn.com/cnnnext/dam/assets/210107090622-01-mercedes-mbux-hyperscreen-rendering-super-tease.jpg);
+}
+.card3{
+    background-image: url(https://www.mbrdi.co.in/wp-content/uploads/2022/05/22C0001_244-scaled.jpg);
+}
+.card4{
+    background-image: url(https://www.cityairnews.com/uploads/images/image-750x-2021-10-07-05:49:08pm-615ee5bc399b3.jpg);
+}
+.join{
+    width: 100vw;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.joindiv{
+    width: 80vw;
+    margin-top: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.join1{
+    width: 50vw;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.join2{
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+.join2img{
+    width: 25vh;
+}
+.joinbtn{
+    color: white;
+    padding: 10px;
+    margin-top: 3vh;
+    background-color: black;
+    border-radius: 10px;
+}
+.green{
+    background-image: url(https://www.wallpaperflare.com/static/1001/824/1003/car-mercedes-benz-mercedes-benz-biome-white-wallpaper.jpg);
+    width: 100vw;
+    height: 60vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.greendiv{
+    width: 80vw;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.425);
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;padding: 5vw;
+    border-radius: 10px;
+}
+.final{
+    background-image: url(https://di-uploads-pod16.dealerinspire.com/mercedesbenzofhuntington/uploads/2018/08/suv-lineup.png);
+    height: 60vh;
+    width: 100vw;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.news{
+    width: 100vw;
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.newsdiv{
+    width: 60vw;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.final>div>h1{
+    font-size: 7vh;
+    color: white;
+}
+.final>div>h3{
+    color: white;
+    font-size: 5vh;
+}
+.final>div{
+    background-color: rgba(0, 0, 0, 0.432);
+    padding: 5vh;
+    border-radius: 10px;
+}
+.menu{
+    display: none;
+}
+
+@media only screen and (max-width:767px){
+    
+    .logo{
+        width: 15vw;
+        margin-left: 5vw;
+    }
+    .logoname{
+        margin-left: 5vw;
+    }
+    .navbar{
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        
+    }
+    a{
+        flex-direction: column;
+        display: none;
+    }
+    .menu{
+        display: inline;
+        margin-right: 5vw;
+    }
+    .welcomediv{
+        flex-direction: column;
+        background-position: 100vh;
+        justify-content: center;
+        align-items: center;
+    }
+    .welcomenote{
+        width: 80vw;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.466);
+        height: 70vh;
+        border-radius: 10px;
+        
+    }
+    .inlogo{
+        width: 70vw;
+    }
+    .eimg{
+        height: fit-content;
+        padding: 10vh 0;
+    }
+    .wedo{
+        flex-direction: column;
+
+    }
+    .card{
+        width: 80vw;
+        margin-top: 5vh;
+    }
+    .card>div{
+        width: 70vw;
+    }
+    .card>h3{
+        width: 70vw;
+    }
+    .join2{
+        display: none;
+    }
+    .join1{
+        width: 80vw;
+    }
+    .greendiv{
+        height:45vh;
+    }
+    .final>div>h1{
+        font-size: 3vh;
+    }
+    .final>div>h3{
+        font-size: 2vh;
+    }
+    .final>div{
+        width: 80vw;
+    }
+    .whodiv>h1 {
+        margin-bottom: 5vh;
+    }
+}
