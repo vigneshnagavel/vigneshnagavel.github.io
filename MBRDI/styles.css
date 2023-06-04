@@ -297,13 +297,14 @@ body{
         justify-content: space-between;
         
     }
-    a{
+    .linkdiv>a{
         flex-direction: column;
         display: none;
     }
     .menu{
         display: inline;
         margin-right: 5vw;
+        color: white;
     }
     .welcomediv{
         flex-direction: column;
@@ -333,9 +334,11 @@ body{
     .card{
         width: 80vw;
         margin-top: 5vh;
+        height: 50vh;
     }
     .card>div{
-        width: 70vw;
+        width: 65vw;
+        height: 30vh;
     }
     .card>h3{
         width: 70vw;
@@ -347,7 +350,7 @@ body{
         width: 80vw;
     }
     .greendiv{
-        height:45vh;
+        height:50vh;
     }
     .final>div>h1{
         font-size: 3vh;
