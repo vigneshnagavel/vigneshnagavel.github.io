@@ -349,8 +349,11 @@ body{
     .join1{
         width: 80vw;
     }
+    .green{
+        height: 70vh;
+    }
     .greendiv{
-        height:50vh;
+        height:60vh;
     }
     .final>div>h1{
         font-size: 3vh;
